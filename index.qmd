@@ -104,21 +104,28 @@ the configuration files that normally reside within the ~.git/~ directory of a c
 - Typically want a copy of `main`.
 - `git worktree add` takes two main arguments, the `branch` and the `path`.
 
-```
-git worktree add main main
-```
-
-When you come to create a new feature branch the directory can be _anywhere_!
-
-```
-git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch
+```shell
+❱ git worktree add main main
 ```
 
-We can make worktrees from remote branches if we fetch them first
+- Create `ns-rse/new-branch` branch in `ns-rse/new-branch/` directory
 
 ```
-git fetch origin ns-rse/dummy:ns-rse/dummy
-git worktree add ns-rse/dummy ns-rse/dummy
+❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch
+```
+
+- Directories can be _anywhere_!
+
+```
+❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch
+
+```
+
+- Fetch remote branches first
+
+```
+❱ git fetch origin ns-rse/dummy:ns-rse/dummy
+❱ git worktree add ns-rse/dummy ns-rse/dummy
 ```
 
 ## Two Worktrees
@@ -207,9 +214,8 @@ Switching branches is as simple as `cd`-ing into the directory.
 ## Solutions!
 
 - Bloated directories requires discipline to remove old worktree directory.
-  - Not much more onerous than removing old branches.
-  - Important to avoid bloat/space (see above).
-- Use a `post-checkout` hook! 🪄
+  - Not more onerous than removing old branches.
+- Use a `post-checkout` hook to setup virtual environment, pre-commit and just! 🪄
   - Uses...
     - [`direnv`](https://direnv.net/)
     - [`just`](https://just.systems/man/en/)
@@ -280,6 +286,7 @@ if [[ "$1" == "0000000000000000000000000000000000000000" ]]; then
 ## Emacs/Magit Integration
 
 - ✅ [Magit](https://magit.vc), the Git porcelain for [Emacs](https://www.gnu.org/software/emacs/), supports worktrees.
+- ✅ List worktrees in the Magit buffer, easy to switch (cursor on point hit `Return`)
 - ✅ `Z` pulls up the transient buffer for worktree management.
 - ✅ Still use [Forge](https://docs.magit.vc/forge/) to interact with and create issues/pull requests GitHub/GitLab.
 
