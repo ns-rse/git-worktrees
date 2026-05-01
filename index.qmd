@@ -110,20 +110,20 @@ the configuration files that normally reside within the ~.git/~ directory of a c
 
 - Create `ns-rse/new-branch` branch in `ns-rse/new-branch/` directory
 
-```
+```shell
 ❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch
 ```
 
 - Directories can be _anywhere_!
 
-```
+```shell
 ❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch
 
 ```
 
 - Fetch remote branches first
 
-```
+```shell
 ❱ git fetch origin ns-rse/dummy:ns-rse/dummy
 ❱ git worktree add ns-rse/dummy ns-rse/dummy
 ```
@@ -132,7 +132,7 @@ the configuration files that normally reside within the ~.git/~ directory of a c
 
 Within `ns-rse/`
 
-``` shell
+```shell
 ❱ tree ns-rse
 [4.0K May  1 09:44]  ns-rse
 ├── [4.0K May  1 09:44]  ns-rse/dummy
@@ -171,7 +171,7 @@ Within `ns-rse/`
 
 **No Worktrees**
 
-```
+```shell
 ❱ cd ns-rse/dummy
 ❱ git status
 On branch ns-rse/dummy
@@ -184,7 +184,7 @@ nothing to commit, working tree clean
 
 **Worktrees**
 
-```
+```shell
 ❱ cd ns-rse/dummy
 ❱ git status
 On branch ns-rse/new-branch

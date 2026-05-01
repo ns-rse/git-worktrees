@@ -313,17 +313,16 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <ul>
 <li>Create <code>ns-rse/new-branch</code> branch in <code>ns-rse/new-branch/</code> directory</li>
 </ul>
-<pre><code>❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Directories can be <em>anywhere</em>!</li>
 </ul>
-<pre><code>❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch
-</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Fetch remote branches first</li>
 </ul>
-<pre><code>❱ git fetch origin ns-rse/dummy:ns-rse/dummy
-❱ git worktree add ns-rse/dummy ns-rse/dummy</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>❱ git fetch origin ns-rse/dummy:ns-rse/dummy</span>
+<span id="cb6-2"><a></a>❱ git worktree add ns-rse/dummy ns-rse/dummy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="two-worktrees" class="slide level2">
 <h2>Two Worktrees</h2>
@@ -362,16 +361,16 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>No Worktrees</strong></p>
-<pre><code>❱ cd ns-rse/dummy
-❱ git status
-On branch ns-rse/dummy
-nothing to commit, working tree clean</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>❱ cd ns-rse/dummy</span>
+<span id="cb8-2"><a></a>❱ git status</span>
+<span id="cb8-3"><a></a>On branch ns-rse/dummy</span>
+<span id="cb8-4"><a></a>nothing to commit, working tree clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Worktrees</strong></p>
-<pre><code>❱ cd ns-rse/dummy
-❱ git status
-On branch ns-rse/new-branch
-nothing to commit, working tree clean</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>❱ cd ns-rse/dummy</span>
+<span id="cb9-2"><a></a>❱ git status</span>
+<span id="cb9-3"><a></a>On branch ns-rse/new-branch</span>
+<span id="cb9-4"><a></a>nothing to commit, working tree clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <ul>
 <li>✅ Different branches can have their own virtual environment with different dependencies.</li>

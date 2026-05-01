@@ -39,7 +39,7 @@
     "href": "index.html#creating-worktrees",
     "title": "Git Worktrees",
     "section": "Creating Worktrees",
-    "text": "Creating Worktrees\n\nTypically want a copy of main.\ngit worktree add takes two main arguments, the branch and the path.\n\n❱ git worktree add main main\n\nCreate ns-rse/new-branch branch in ns-rse/new-branch/ directory\n\n❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch\n\nDirectories can be anywhere!\n\n❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch\n\n\nFetch remote branches first\n\n❱ git fetch origin ns-rse/dummy:ns-rse/dummy\n❱ git worktree add ns-rse/dummy ns-rse/dummy"
+    "text": "Creating Worktrees\n\nTypically want a copy of main.\ngit worktree add takes two main arguments, the branch and the path.\n\n❱ git worktree add main main\n\nCreate ns-rse/new-branch branch in ns-rse/new-branch/ directory\n\n❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch\n\nDirectories can be anywhere!\n\n❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch\n\nFetch remote branches first\n\n❱ git fetch origin ns-rse/dummy:ns-rse/dummy\n❱ git worktree add ns-rse/dummy ns-rse/dummy"
   },
   {
     "objectID": "index.html#two-worktrees",
