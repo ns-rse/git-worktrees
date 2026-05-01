@@ -60,14 +60,14 @@
     "href": "index.html#challenges",
     "title": "Git Worktrees",
     "section": "Challenges",
-    "text": "Challenges\n\nNeed to create virtual environment in each directory.\n\nNB Large dependencies will increase required space.\n\nDiscipline to remove old worktree directory.\n\nNot much more onerous than removing old branches.\nImportant to avoid bloat/space (see above).\n\nNo .justfile"
+    "text": "Challenges\n\nNeed to create virtual environment in each directory.\nLarge dependencies will increase required space.\nNo pre-commit installed in worktree\nNo .justfile"
   },
   {
     "objectID": "index.html#solutions",
     "href": "index.html#solutions",
     "title": "Git Worktrees",
     "section": "Solutions!",
-    "text": "Solutions!\n\nUse a post-checkout hook! 🪄\nPlace the following in hooks/\nUses…\n\ndirenv\njust\npre-commit\nuv\n\nAssumes using nested &lt;github-user&gt;/&lt;branch-name&gt; structure for worktree directories (modify BASE_PATH if needed)."
+    "text": "Solutions!\n\nBloated directories requires discipline to remove old worktree directory.\n\nNot much more onerous than removing old branches.\nImportant to avoid bloat/space (see above).\n\nUse a post-checkout hook! 🪄\n\nUses…\n\ndirenv\njust\npre-commit\nuv\n\nAssumes using nested &lt;github-user&gt;/&lt;branch-name&gt; structure for worktree directories (modify BASE_PATH if needed)."
   },
   {
     "objectID": "index.html#post-checkout-hook",
@@ -81,7 +81,7 @@
     "href": "index.html#emacsmagit-integration",
     "title": "Git Worktrees",
     "section": "Emacs/Magit Integration",
-    "text": "Emacs/Magit Integration\n\n✅ Magit, the Git porcelain for Emacs supports worktrees\n✅ Z pulls up the transient buffer for worktree management.\n✅ Still use Forge to interact with issues/pull requests GitHub/GitLab\n\n❌ Using bare clones I’ve found I can’t create pull requests from Forge.\n\n\n  ;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/\n  ;; Show all worktrees at the end of the status buffer (if more than one)\n  (add-hook 'magit-status-sections-hook #'magit-insert-worktrees t)\n\n\n\nEmacs Magit Worktrees"
+    "text": "Emacs/Magit Integration\n\n✅ Magit, the Git porcelain for Emacs, supports worktrees.\n✅ Z pulls up the transient buffer for worktree management.\n✅ Still use Forge to interact with and create issues/pull requests GitHub/GitLab.\n\n  ;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/\n  ;; Show all worktrees at the end of the status buffer (if more than one)\n  (add-hook 'magit-status-sections-hook #'magit-insert-worktrees t)\n\n\n\nEmacs Magit Worktrees"
   },
   {
     "objectID": "index.html#section",

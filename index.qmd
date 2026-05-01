@@ -200,22 +200,22 @@ Switching branches is as simple as `cd`-ing into the directory.
 ## Challenges
 
 - Need to create virtual environment in each directory.
-  - **NB** Large dependencies will increase required space.
-- Discipline to remove old worktree directory.
-  - Not much more onerous than removing old branches.
-  - Important to avoid bloat/space (see above).
+- Large dependencies will increase required space.
+- No `pre-commit` installed in worktree
 - No [`.justfile`](https://just.systems/man/en/)
 
 ## Solutions!
 
+- Bloated directories requires discipline to remove old worktree directory.
+  - Not much more onerous than removing old branches.
+  - Important to avoid bloat/space (see above).
 - Use a `post-checkout` hook! 🪄
-- Place the following in `hooks/`
-- Uses...
-  - [`direnv`](https://direnv.net/)
-  - [`just`](https://just.systems/man/en/)
-  - [`pre-commit`](https://pre-commit.com)
-  - [`uv`](https://docs.astral.sh/uv)
-- Assumes using nested `<github-user>/<branch-name>` structure for worktree directories (modify `BASE_PATH` if needed).
+  - Uses...
+    - [`direnv`](https://direnv.net/)
+    - [`just`](https://just.systems/man/en/)
+    - [`pre-commit`](https://pre-commit.com)
+    - [`uv`](https://docs.astral.sh/uv)
+  - Assumes using nested `<github-user>/<branch-name>` structure for worktree directories (modify `BASE_PATH` if needed).
 
 
 ## Post-checkout hook
@@ -279,10 +279,9 @@ if [[ "$1" == "0000000000000000000000000000000000000000" ]]; then
 
 ## Emacs/Magit Integration
 
-- ✅ [Magit](https://magit.vc), the Git porcelain for [Emacs]() supports worktrees
+- ✅ [Magit](https://magit.vc), the Git porcelain for [Emacs](https://www.gnu.org/software/emacs/), supports worktrees.
 - ✅ `Z` pulls up the transient buffer for worktree management.
-- ✅ Still use [Forge](https://docs.magit.vc/forge/) to interact with issues/pull requests GitHub/GitLab
-  - ❌ Using bare clones I've found I can't create pull requests from Forge.
+- ✅ Still use [Forge](https://docs.magit.vc/forge/) to interact with and create issues/pull requests GitHub/GitLab.
 
 ``` lisp
   ;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/

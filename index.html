@@ -386,23 +386,22 @@ nothing to commit, working tree clean</code></pre>
 <section id="challenges" class="slide level2">
 <h2>Challenges</h2>
 <ul>
-<li>Need to create virtual environment in each directory.
-<ul>
-<li><strong>NB</strong> Large dependencies will increase required space.</li>
-</ul></li>
-<li>Discipline to remove old worktree directory.
-<ul>
-<li>Not much more onerous than removing old branches.</li>
-<li>Important to avoid bloat/space (see above).</li>
-</ul></li>
+<li>Need to create virtual environment in each directory.</li>
+<li>Large dependencies will increase required space.</li>
+<li>No <code>pre-commit</code> installed in worktree</li>
 <li>No <a href="https://just.systems/man/en/" target="_blank"><code>.justfile</code></a></li>
 </ul>
 </section>
 <section id="solutions" class="slide level2">
 <h2>Solutions!</h2>
 <ul>
-<li>Use a <code>post-checkout</code> hook! 🪄</li>
-<li>Place the following in <code>hooks/</code></li>
+<li>Bloated directories requires discipline to remove old worktree directory.
+<ul>
+<li>Not much more onerous than removing old branches.</li>
+<li>Important to avoid bloat/space (see above).</li>
+</ul></li>
+<li>Use a <code>post-checkout</code> hook! 🪄
+<ul>
 <li>Uses…
 <ul>
 <li><a href="https://direnv.net/" target="_blank"><code>direnv</code></a></li>
@@ -411,6 +410,7 @@ nothing to commit, working tree clean</code></pre>
 <li><a href="https://docs.astral.sh/uv" target="_blank"><code>uv</code></a></li>
 </ul></li>
 <li>Assumes using nested <code>&lt;github-user&gt;/&lt;branch-name&gt;</code> structure for worktree directories (modify <code>BASE_PATH</code> if needed).</li>
+</ul></li>
 </ul>
 </section>
 <section id="post-checkout-hook" class="slide level2">
@@ -471,12 +471,9 @@ nothing to commit, working tree clean</code></pre>
 <section id="emacsmagit-integration" class="slide level2">
 <h2>Emacs/Magit Integration</h2>
 <ul>
-<li>✅ <a href="https://magit.vc" target="_blank">Magit</a>, the Git porcelain for <a href="" target="_blank">Emacs</a> supports worktrees</li>
+<li>✅ <a href="https://magit.vc" target="_blank">Magit</a>, the Git porcelain for <a href="https://www.gnu.org/software/emacs/" target="_blank">Emacs</a>, supports worktrees.</li>
 <li>✅ <code>Z</code> pulls up the transient buffer for worktree management.</li>
-<li>✅ Still use <a href="https://docs.magit.vc/forge/" target="_blank">Forge</a> to interact with issues/pull requests GitHub/GitLab
-<ul>
-<li>❌ Using bare clones I’ve found I can’t create pull requests from Forge.</li>
-</ul></li>
+<li>✅ Still use <a href="https://docs.magit.vc/forge/" target="_blank">Forge</a> to interact with and create issues/pull requests GitHub/GitLab.</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource lisp number-lines code-with-copy"><code class="sourceCode commonlisp"><span id="cb10-1"><a></a>  <span class="co">;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/</span></span>
 <span id="cb10-2"><a></a>  <span class="co">;; Show all worktrees at the end of the status buffer (if more than one)</span></span>
