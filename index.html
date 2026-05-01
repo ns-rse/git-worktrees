@@ -309,44 +309,53 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <li>Typically want a copy of <code>main</code>.</li>
 <li><code>git worktree add</code> takes two main arguments, the <code>branch</code> and the <code>path</code>.</li>
 </ul>
-<pre><code>git worktree add main main</code></pre>
-<p>When you come to create a new feature branch the directory can be <em>anywhere</em>!</p>
-<pre><code>git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch</code></pre>
-<p>We can make worktrees from remote branches if we fetch them first</p>
-<pre><code>git fetch origin ns-rse/dummy:ns-rse/dummy
-git worktree add ns-rse/dummy ns-rse/dummy</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>❱ git worktree add main main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Create <code>ns-rse/new-branch</code> branch in <code>ns-rse/new-branch/</code> directory</li>
+</ul>
+<pre><code>❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch</code></pre>
+<ul>
+<li>Directories can be <em>anywhere</em>!</li>
+</ul>
+<pre><code>❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch
+</code></pre>
+<ul>
+<li>Fetch remote branches first</li>
+</ul>
+<pre><code>❱ git fetch origin ns-rse/dummy:ns-rse/dummy
+❱ git worktree add ns-rse/dummy ns-rse/dummy</code></pre>
 </section>
 <section id="two-worktrees" class="slide level2">
 <h2>Two Worktrees</h2>
 <p>Within <code>ns-rse/</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>❱ tree ns-rse</span>
-<span id="cb6-2"><a></a>[4.0K May  1 09:44]  ns-rse</span>
-<span id="cb6-3"><a></a>├── [4.0K May  1 09:44]  ns-rse/dummy</span>
-<span id="cb6-4"><a></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/img</span>
-<span id="cb6-5"><a></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 34K May  1 09:44]  ns-rse/dummy/img/OSC_Sheffield.png</span>
-<span id="cb6-6"><a></a>│&nbsp;&nbsp; ├── [7.9K May  1 09:44]  ns-rse/dummy/index.qmd</span>
-<span id="cb6-7"><a></a>│&nbsp;&nbsp; ├── [6.9K May  1 09:44]  ns-rse/dummy/LICENSE</span>
-<span id="cb6-8"><a></a>│&nbsp;&nbsp; ├── [ 158 May  1 09:44]  ns-rse/dummy/_quarto.yml</span>
-<span id="cb6-9"><a></a>│&nbsp;&nbsp; ├── [7.7K May  1 09:44]  ns-rse/dummy/README.md</span>
-<span id="cb6-10"><a></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/renv</span>
-<span id="cb6-11"><a></a>│&nbsp;&nbsp; │&nbsp;&nbsp; ├── [ 32K May  1 09:44]  ns-rse/dummy/renv/activate.R</span>
-<span id="cb6-12"><a></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 412 May  1 09:44]  ns-rse/dummy/renv/settings.json</span>
-<span id="cb6-13"><a></a>│&nbsp;&nbsp; ├── [ 15K May  1 09:44]  ns-rse/dummy/renv.lock</span>
-<span id="cb6-14"><a></a>│&nbsp;&nbsp; └── [  24 May  1 09:44]  ns-rse/dummy/requirements.txt</span>
-<span id="cb6-15"><a></a>└── [4.0K May  1 09:40]  ns-rse/new-branch</span>
-<span id="cb6-16"><a></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/img</span>
-<span id="cb6-17"><a></a>    │&nbsp;&nbsp; └── [ 34K May  1 09:40]  ns-rse/new-branch/img/OSC_Sheffield.png</span>
-<span id="cb6-18"><a></a>    ├── [7.9K May  1 09:40]  ns-rse/new-branch/index.qmd</span>
-<span id="cb6-19"><a></a>    ├── [6.9K May  1 09:40]  ns-rse/new-branch/LICENSE</span>
-<span id="cb6-20"><a></a>    ├── [ 158 May  1 09:40]  ns-rse/new-branch/_quarto.yml</span>
-<span id="cb6-21"><a></a>    ├── [7.7K May  1 09:40]  ns-rse/new-branch/README.md</span>
-<span id="cb6-22"><a></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/renv</span>
-<span id="cb6-23"><a></a>    │&nbsp;&nbsp; ├── [ 32K May  1 09:40]  ns-rse/new-branch/renv/activate.R</span>
-<span id="cb6-24"><a></a>    │&nbsp;&nbsp; └── [ 412 May  1 09:40]  ns-rse/new-branch/renv/settings.json</span>
-<span id="cb6-25"><a></a>    ├── [ 15K May  1 09:40]  ns-rse/new-branch/renv.lock</span>
-<span id="cb6-26"><a></a>    └── [  24 May  1 09:40]  ns-rse/new-branch/requirements.txt</span>
-<span id="cb6-27"><a></a></span>
-<span id="cb6-28"><a></a>7 directories, 18 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>❱ tree ns-rse</span>
+<span id="cb7-2"><a></a>[4.0K May  1 09:44]  ns-rse</span>
+<span id="cb7-3"><a></a>├── [4.0K May  1 09:44]  ns-rse/dummy</span>
+<span id="cb7-4"><a></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/img</span>
+<span id="cb7-5"><a></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 34K May  1 09:44]  ns-rse/dummy/img/OSC_Sheffield.png</span>
+<span id="cb7-6"><a></a>│&nbsp;&nbsp; ├── [7.9K May  1 09:44]  ns-rse/dummy/index.qmd</span>
+<span id="cb7-7"><a></a>│&nbsp;&nbsp; ├── [6.9K May  1 09:44]  ns-rse/dummy/LICENSE</span>
+<span id="cb7-8"><a></a>│&nbsp;&nbsp; ├── [ 158 May  1 09:44]  ns-rse/dummy/_quarto.yml</span>
+<span id="cb7-9"><a></a>│&nbsp;&nbsp; ├── [7.7K May  1 09:44]  ns-rse/dummy/README.md</span>
+<span id="cb7-10"><a></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/renv</span>
+<span id="cb7-11"><a></a>│&nbsp;&nbsp; │&nbsp;&nbsp; ├── [ 32K May  1 09:44]  ns-rse/dummy/renv/activate.R</span>
+<span id="cb7-12"><a></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 412 May  1 09:44]  ns-rse/dummy/renv/settings.json</span>
+<span id="cb7-13"><a></a>│&nbsp;&nbsp; ├── [ 15K May  1 09:44]  ns-rse/dummy/renv.lock</span>
+<span id="cb7-14"><a></a>│&nbsp;&nbsp; └── [  24 May  1 09:44]  ns-rse/dummy/requirements.txt</span>
+<span id="cb7-15"><a></a>└── [4.0K May  1 09:40]  ns-rse/new-branch</span>
+<span id="cb7-16"><a></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/img</span>
+<span id="cb7-17"><a></a>    │&nbsp;&nbsp; └── [ 34K May  1 09:40]  ns-rse/new-branch/img/OSC_Sheffield.png</span>
+<span id="cb7-18"><a></a>    ├── [7.9K May  1 09:40]  ns-rse/new-branch/index.qmd</span>
+<span id="cb7-19"><a></a>    ├── [6.9K May  1 09:40]  ns-rse/new-branch/LICENSE</span>
+<span id="cb7-20"><a></a>    ├── [ 158 May  1 09:40]  ns-rse/new-branch/_quarto.yml</span>
+<span id="cb7-21"><a></a>    ├── [7.7K May  1 09:40]  ns-rse/new-branch/README.md</span>
+<span id="cb7-22"><a></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/renv</span>
+<span id="cb7-23"><a></a>    │&nbsp;&nbsp; ├── [ 32K May  1 09:40]  ns-rse/new-branch/renv/activate.R</span>
+<span id="cb7-24"><a></a>    │&nbsp;&nbsp; └── [ 412 May  1 09:40]  ns-rse/new-branch/renv/settings.json</span>
+<span id="cb7-25"><a></a>    ├── [ 15K May  1 09:40]  ns-rse/new-branch/renv.lock</span>
+<span id="cb7-26"><a></a>    └── [  24 May  1 09:40]  ns-rse/new-branch/requirements.txt</span>
+<span id="cb7-27"><a></a></span>
+<span id="cb7-28"><a></a>7 directories, 18 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="switching-branches-worktrees" class="slide level2">
 <h2>Switching <sub>branches</sub> worktrees</h2>
@@ -397,10 +406,9 @@ nothing to commit, working tree clean</code></pre>
 <ul>
 <li>Bloated directories requires discipline to remove old worktree directory.
 <ul>
-<li>Not much more onerous than removing old branches.</li>
-<li>Important to avoid bloat/space (see above).</li>
+<li>Not more onerous than removing old branches.</li>
 </ul></li>
-<li>Use a <code>post-checkout</code> hook! 🪄
+<li>Use a <code>post-checkout</code> hook to setup virtual environment, pre-commit and just! 🪄
 <ul>
 <li>Uses…
 <ul>
@@ -417,67 +425,68 @@ nothing to commit, working tree clean</code></pre>
 <h2>Post-checkout hook</h2>
 <p><a href="https://mskelton.dev/bytes/20230906143340" target="_blank">Inspiration</a></p>
 <p>Find in my <a href="https://codeberg.org/slackline/dotfiles/src/branch/master/.config/git/hooks/post-checkout" target="_blank">dotfiles</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="co">#!/bin/bash</span></span>
-<span id="cb9-2"><a></a><span class="co">#</span></span>
-<span id="cb9-3"><a></a><span class="co"># Inspiration from : https://mskelton.dev/bytes/20230906143340</span></span>
-<span id="cb9-4"><a></a><span class="co">#</span></span>
-<span id="cb9-5"><a></a><span class="co"># Copy .justfile and .envrc to new worktrees on first checkout and create and activate a virtual environment</span></span>
-<span id="cb9-6"><a></a><span class="co"># with uv</span></span>
-<span id="cb9-7"><a></a></span>
-<span id="cb9-8"><a></a><span class="co"># Base directory for bare repository</span></span>
-<span id="cb9-9"><a></a><span class="va">BASE_PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--git-dir</span><span class="va">)</span><span class="st">/../../"</span></span>
-<span id="cb9-10"><a></a></span>
-<span id="cb9-11"><a></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main/.justfile"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-12"><a></a>  <span class="bu">echo</span> <span class="st">"No .justfile creating a basic skeleton"</span></span>
-<span id="cb9-13"><a></a>  <span class="bu">echo</span> <span class="st">"@default:\n    @just --list\n\n"</span> <span class="op">&gt;</span> main/.justfile</span>
-<span id="cb9-14"><a></a>  <span class="bu">echo</span> <span class="st">"mkdocs:\n    mkdocs serve --watch docs"</span> <span class="op">&gt;&gt;</span> main/.justfile</span>
-<span id="cb9-15"><a></a>  <span class="bu">echo</span> <span class="st">"test_profile:\n    python -m cProfile -o tmp/</span><span class="va">$(</span><span class="fu">git</span> rev-parse HEAD<span class="va">)</span><span class="st">_</span><span class="va">$(</span><span class="fu">date</span> +%Y%m%d<span class="va">)</span><span class="st">.prof </span><span class="va">$(</span><span class="fu">which</span> pytest<span class="va">)</span><span class="st"> tests/test.py"</span></span>
-<span id="cb9-16"><a></a>  <span class="bu">echo</span> <span class="st">"test:\n    pytest --cov=src --numprocesses=logical"</span></span>
-<span id="cb9-17"><a></a>  <span class="bu">echo</span> <span class="st">"pc_ruff\n    pre-commit run ruff-check --all-files ; pre-commit run ruff-format --all-files"</span></span>
-<span id="cb9-18"><a></a>  <span class="bu">echo</span> <span class="st">"pc_npd:\n    pre-commit run numpydoc-validation --all-files"</span></span>
-<span id="cb9-19"><a></a>  <span class="bu">echo</span> <span class="st">"pc_black:\n    pre-commit run blacken-docs --all-files"</span></span>
-<span id="cb9-20"><a></a>  <span class="bu">echo</span> <span class="st">"pc_prettier:\n    pre-commit run prettier --all-files"</span></span>
-<span id="cb9-21"><a></a>  <span class="bu">echo</span> <span class="st">"pc_markdown:\n    pre-commit run markdownlint-cli2 --all-files"</span></span>
-<span id="cb9-22"><a></a>  <span class="bu">echo</span> <span class="st">"pc_pylint:\n    pre-commit run pylint --all-files"</span></span>
-<span id="cb9-23"><a></a><span class="cf">fi</span></span>
-<span id="cb9-24"><a></a></span>
-<span id="cb9-25"><a></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main/.envrc"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-26"><a></a>  <span class="bu">echo</span> <span class="st">"No .envrc creating a basic skeleton"</span></span>
-<span id="cb9-27"><a></a>  <span class="bu">echo</span> <span class="st">"#!/bin/bash\nsource .venv/bin/activate"</span> <span class="op">&gt;</span> main/.envrc</span>
-<span id="cb9-28"><a></a><span class="cf">fi</span></span>
-<span id="cb9-29"><a></a></span>
-<span id="cb9-30"><a></a><span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="ot">==</span> <span class="st">"0000000000000000000000000000000000000000"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb9-31"><a></a>  <span class="co"># Copy files (they should be in main/)</span></span>
-<span id="cb9-32"><a></a>  <span class="va">FILES</span><span class="op">=</span><span class="va">(</span><span class="st">".justfile"</span> <span class="st">".envrc"</span><span class="va">)</span></span>
-<span id="cb9-33"><a></a></span>
-<span id="cb9-34"><a></a>  <span class="cf">for</span> FILE <span class="kw">in</span> <span class="st">"</span><span class="va">${FILES</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb9-35"><a></a>    <span class="bu">echo</span> <span class="st">"Copying main/'</span><span class="va">${FILE}</span><span class="st">' to </span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
-<span id="cb9-36"><a></a>    <span class="fu">cp</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main/</span><span class="va">${FILE}</span><span class="st">"</span> <span class="st">"</span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
-<span id="cb9-37"><a></a>  <span class="cf">done</span></span>
-<span id="cb9-38"><a></a></span>
-<span id="cb9-39"><a></a>  <span class="co"># Create a virtual environment using uv and install</span></span>
-<span id="cb9-40"><a></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="st">".venv/"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-41"><a></a>    <span class="ex">uv</span> venv</span>
-<span id="cb9-42"><a></a>    <span class="ex">uv</span> sync</span>
-<span id="cb9-43"><a></a>    <span class="ex">uv</span> pip install <span class="at">-e</span> .</span>
-<span id="cb9-44"><a></a>    <span class="co"># Allow direnv so venv can be activated</span></span>
-<span id="cb9-45"><a></a>    <span class="ex">direnv</span> allow</span>
-<span id="cb9-46"><a></a>  <span class="cf">fi</span></span>
-<span id="cb9-47"><a></a>  <span class="co"># Install pre-commit if not already in place</span></span>
-<span id="cb9-48"><a></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/hooks/pre-commit"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-49"><a></a>    <span class="va">$(</span><span class="fu">which</span> pre-commit<span class="va">)</span> install</span>
-<span id="cb9-50"><a></a>  <span class="cf">fi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="co">#!/bin/bash</span></span>
+<span id="cb10-2"><a></a><span class="co">#</span></span>
+<span id="cb10-3"><a></a><span class="co"># Inspiration from : https://mskelton.dev/bytes/20230906143340</span></span>
+<span id="cb10-4"><a></a><span class="co">#</span></span>
+<span id="cb10-5"><a></a><span class="co"># Copy .justfile and .envrc to new worktrees on first checkout and create and activate a virtual environment</span></span>
+<span id="cb10-6"><a></a><span class="co"># with uv</span></span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a><span class="co"># Base directory for bare repository</span></span>
+<span id="cb10-9"><a></a><span class="va">BASE_PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--git-dir</span><span class="va">)</span><span class="st">/../../"</span></span>
+<span id="cb10-10"><a></a></span>
+<span id="cb10-11"><a></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main/.justfile"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-12"><a></a>  <span class="bu">echo</span> <span class="st">"No .justfile creating a basic skeleton"</span></span>
+<span id="cb10-13"><a></a>  <span class="bu">echo</span> <span class="st">"@default:\n    @just --list\n\n"</span> <span class="op">&gt;</span> main/.justfile</span>
+<span id="cb10-14"><a></a>  <span class="bu">echo</span> <span class="st">"mkdocs:\n    mkdocs serve --watch docs"</span> <span class="op">&gt;&gt;</span> main/.justfile</span>
+<span id="cb10-15"><a></a>  <span class="bu">echo</span> <span class="st">"test_profile:\n    python -m cProfile -o tmp/</span><span class="va">$(</span><span class="fu">git</span> rev-parse HEAD<span class="va">)</span><span class="st">_</span><span class="va">$(</span><span class="fu">date</span> +%Y%m%d<span class="va">)</span><span class="st">.prof </span><span class="va">$(</span><span class="fu">which</span> pytest<span class="va">)</span><span class="st"> tests/test.py"</span></span>
+<span id="cb10-16"><a></a>  <span class="bu">echo</span> <span class="st">"test:\n    pytest --cov=src --numprocesses=logical"</span></span>
+<span id="cb10-17"><a></a>  <span class="bu">echo</span> <span class="st">"pc_ruff\n    pre-commit run ruff-check --all-files ; pre-commit run ruff-format --all-files"</span></span>
+<span id="cb10-18"><a></a>  <span class="bu">echo</span> <span class="st">"pc_npd:\n    pre-commit run numpydoc-validation --all-files"</span></span>
+<span id="cb10-19"><a></a>  <span class="bu">echo</span> <span class="st">"pc_black:\n    pre-commit run blacken-docs --all-files"</span></span>
+<span id="cb10-20"><a></a>  <span class="bu">echo</span> <span class="st">"pc_prettier:\n    pre-commit run prettier --all-files"</span></span>
+<span id="cb10-21"><a></a>  <span class="bu">echo</span> <span class="st">"pc_markdown:\n    pre-commit run markdownlint-cli2 --all-files"</span></span>
+<span id="cb10-22"><a></a>  <span class="bu">echo</span> <span class="st">"pc_pylint:\n    pre-commit run pylint --all-files"</span></span>
+<span id="cb10-23"><a></a><span class="cf">fi</span></span>
+<span id="cb10-24"><a></a></span>
+<span id="cb10-25"><a></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main/.envrc"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-26"><a></a>  <span class="bu">echo</span> <span class="st">"No .envrc creating a basic skeleton"</span></span>
+<span id="cb10-27"><a></a>  <span class="bu">echo</span> <span class="st">"#!/bin/bash\nsource .venv/bin/activate"</span> <span class="op">&gt;</span> main/.envrc</span>
+<span id="cb10-28"><a></a><span class="cf">fi</span></span>
+<span id="cb10-29"><a></a></span>
+<span id="cb10-30"><a></a><span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="ot">==</span> <span class="st">"0000000000000000000000000000000000000000"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb10-31"><a></a>  <span class="co"># Copy files (they should be in main/)</span></span>
+<span id="cb10-32"><a></a>  <span class="va">FILES</span><span class="op">=</span><span class="va">(</span><span class="st">".justfile"</span> <span class="st">".envrc"</span><span class="va">)</span></span>
+<span id="cb10-33"><a></a></span>
+<span id="cb10-34"><a></a>  <span class="cf">for</span> FILE <span class="kw">in</span> <span class="st">"</span><span class="va">${FILES</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb10-35"><a></a>    <span class="bu">echo</span> <span class="st">"Copying main/'</span><span class="va">${FILE}</span><span class="st">' to </span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
+<span id="cb10-36"><a></a>    <span class="fu">cp</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main/</span><span class="va">${FILE}</span><span class="st">"</span> <span class="st">"</span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
+<span id="cb10-37"><a></a>  <span class="cf">done</span></span>
+<span id="cb10-38"><a></a></span>
+<span id="cb10-39"><a></a>  <span class="co"># Create a virtual environment using uv and install</span></span>
+<span id="cb10-40"><a></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="st">".venv/"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-41"><a></a>    <span class="ex">uv</span> venv</span>
+<span id="cb10-42"><a></a>    <span class="ex">uv</span> sync</span>
+<span id="cb10-43"><a></a>    <span class="ex">uv</span> pip install <span class="at">-e</span> .</span>
+<span id="cb10-44"><a></a>    <span class="co"># Allow direnv so venv can be activated</span></span>
+<span id="cb10-45"><a></a>    <span class="ex">direnv</span> allow</span>
+<span id="cb10-46"><a></a>  <span class="cf">fi</span></span>
+<span id="cb10-47"><a></a>  <span class="co"># Install pre-commit if not already in place</span></span>
+<span id="cb10-48"><a></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/hooks/pre-commit"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-49"><a></a>    <span class="va">$(</span><span class="fu">which</span> pre-commit<span class="va">)</span> install</span>
+<span id="cb10-50"><a></a>  <span class="cf">fi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="emacsmagit-integration" class="slide level2">
 <h2>Emacs/Magit Integration</h2>
 <ul>
 <li>✅ <a href="https://magit.vc" target="_blank">Magit</a>, the Git porcelain for <a href="https://www.gnu.org/software/emacs/" target="_blank">Emacs</a>, supports worktrees.</li>
+<li>✅ List worktrees in the Magit buffer, easy to switch (cursor on point hit <code>Return</code>)</li>
 <li>✅ <code>Z</code> pulls up the transient buffer for worktree management.</li>
 <li>✅ Still use <a href="https://docs.magit.vc/forge/" target="_blank">Forge</a> to interact with and create issues/pull requests GitHub/GitLab.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource lisp number-lines code-with-copy"><code class="sourceCode commonlisp"><span id="cb10-1"><a></a>  <span class="co">;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/</span></span>
-<span id="cb10-2"><a></a>  <span class="co">;; Show all worktrees at the end of the status buffer (if more than one)</span></span>
-<span id="cb10-3"><a></a>  (add-hook <span class="dt">'magit-status-sections-hook</span> <span class="op">#'</span>magit-insert-worktrees <span class="kw">t</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource lisp number-lines code-with-copy"><code class="sourceCode commonlisp"><span id="cb11-1"><a></a>  <span class="co">;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/</span></span>
+<span id="cb11-2"><a></a>  <span class="co">;; Show all worktrees at the end of the status buffer (if more than one)</span></span>
+<span id="cb11-3"><a></a>  (add-hook <span class="dt">'magit-status-sections-hook</span> <span class="op">#'</span>magit-insert-worktrees <span class="kw">t</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/emacs_magit_worktree.png"></p>

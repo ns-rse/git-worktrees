@@ -39,7 +39,7 @@
     "href": "index.html#creating-worktrees",
     "title": "Git Worktrees",
     "section": "Creating Worktrees",
-    "text": "Creating Worktrees\n\nTypically want a copy of main.\ngit worktree add takes two main arguments, the branch and the path.\n\ngit worktree add main main\nWhen you come to create a new feature branch the directory can be anywhere!\ngit worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch\nWe can make worktrees from remote branches if we fetch them first\ngit fetch origin ns-rse/dummy:ns-rse/dummy\ngit worktree add ns-rse/dummy ns-rse/dummy"
+    "text": "Creating Worktrees\n\nTypically want a copy of main.\ngit worktree add takes two main arguments, the branch and the path.\n\n❱ git worktree add main main\n\nCreate ns-rse/new-branch branch in ns-rse/new-branch/ directory\n\n❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch\n\nDirectories can be anywhere!\n\n❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch\n\n\nFetch remote branches first\n\n❱ git fetch origin ns-rse/dummy:ns-rse/dummy\n❱ git worktree add ns-rse/dummy ns-rse/dummy"
   },
   {
     "objectID": "index.html#two-worktrees",
@@ -67,7 +67,7 @@
     "href": "index.html#solutions",
     "title": "Git Worktrees",
     "section": "Solutions!",
-    "text": "Solutions!\n\nBloated directories requires discipline to remove old worktree directory.\n\nNot much more onerous than removing old branches.\nImportant to avoid bloat/space (see above).\n\nUse a post-checkout hook! 🪄\n\nUses…\n\ndirenv\njust\npre-commit\nuv\n\nAssumes using nested &lt;github-user&gt;/&lt;branch-name&gt; structure for worktree directories (modify BASE_PATH if needed)."
+    "text": "Solutions!\n\nBloated directories requires discipline to remove old worktree directory.\n\nNot more onerous than removing old branches.\n\nUse a post-checkout hook to setup virtual environment, pre-commit and just! 🪄\n\nUses…\n\ndirenv\njust\npre-commit\nuv\n\nAssumes using nested &lt;github-user&gt;/&lt;branch-name&gt; structure for worktree directories (modify BASE_PATH if needed)."
   },
   {
     "objectID": "index.html#post-checkout-hook",
@@ -81,7 +81,7 @@
     "href": "index.html#emacsmagit-integration",
     "title": "Git Worktrees",
     "section": "Emacs/Magit Integration",
-    "text": "Emacs/Magit Integration\n\n✅ Magit, the Git porcelain for Emacs, supports worktrees.\n✅ Z pulls up the transient buffer for worktree management.\n✅ Still use Forge to interact with and create issues/pull requests GitHub/GitLab.\n\n  ;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/\n  ;; Show all worktrees at the end of the status buffer (if more than one)\n  (add-hook 'magit-status-sections-hook #'magit-insert-worktrees t)\n\n\n\nEmacs Magit Worktrees"
+    "text": "Emacs/Magit Integration\n\n✅ Magit, the Git porcelain for Emacs, supports worktrees.\n✅ List worktrees in the Magit buffer, easy to switch (cursor on point hit Return)\n✅ Z pulls up the transient buffer for worktree management.\n✅ Still use Forge to interact with and create issues/pull requests GitHub/GitLab.\n\n  ;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/\n  ;; Show all worktrees at the end of the status buffer (if more than one)\n  (add-hook 'magit-status-sections-hook #'magit-insert-worktrees t)\n\n\n\nEmacs Magit Worktrees"
   },
   {
     "objectID": "index.html#section",
