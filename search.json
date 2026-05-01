@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html#scan-this",
+    "href": "index.html#scan-this",
+    "title": "Git Worktrees",
+    "section": "Scan This",
+    "text": "Scan This\n\n\n    \nns-rse.github.io/git-worktrees"
+  },
+  {
+    "objectID": "index.html#git-worktrees",
+    "href": "index.html#git-worktrees",
+    "title": "Git Worktrees",
+    "section": "Git Worktrees",
+    "text": "Git Worktrees\n\nWhat?\nWhy?\nChallenges?"
+  },
+  {
+    "objectID": "index.html#what-are-worktrees",
+    "href": "index.html#what-are-worktrees",
+    "title": "Git Worktrees",
+    "section": "What are Worktrees?",
+    "text": "What are Worktrees?\n\nSingle clone of a repository.\nBranches live in their own directory.\ncd to/worktree and you check it out."
+  },
+  {
+    "objectID": "index.html#no-worktrees",
+    "href": "index.html#no-worktrees",
+    "title": "Git Worktrees",
+    "section": "No Worktrees",
+    "text": "No Worktrees\n❱ cd ~/work/git/hub/ns-rse/\n❱ git clone git@github.com:ns-rse/git-worktrees.git\n❱ cd git-worktrees\n❱ ls -lha\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:09:16 2026  .\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:36 2026  ..\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:19:27 2026  .git    # &lt;&lt;&lt;&lt; configuration directory\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:38 2026  .github\n.rw-r--r-- neil neil  49 B  Fri May  1 09:07:38 2026  .gitignore\n.rw-r--r-- neil neil 310 B  Fri May  1 09:07:38 2026  .markdownlint-cli2.yaml\n.rw-r--r-- neil neil 567 B  Fri May  1 09:07:38 2026  .pre-commit-config.yaml\n.rw-r--r-- neil neil  26 B  Fri May  1 09:07:38 2026  .Rprofile\n.rw-r--r-- neil neil 158 B  Fri May  1 09:07:38 2026  _quarto.yml\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:38 2026  img\n.rw-r--r-- neil neil 7.9 KB Fri May  1 09:07:38 2026  index.qmd\n.rw-r--r-- neil neil 6.9 KB Fri May  1 09:07:38 2026  LICENSE\n.rw-r--r-- neil neil 7.7 KB Fri May  1 09:07:38 2026  README.md\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:14:19 2026  renv\n.rw-r--r-- neil neil  15 KB Fri May  1 09:07:38 2026  renv.lock\n.rw-r--r-- neil neil  24 B  Fri May  1 09:07:38 2026 󰌠 requirements.txt"
+  },
+  {
+    "objectID": "index.html#worktrees",
+    "href": "index.html#worktrees",
+    "title": "Git Worktrees",
+    "section": "Worktrees",
+    "text": "Worktrees\n❱ git clone --bare git@github.com:ns-rse/git-worktrees.git git-worktrees\n❱ cd git-worktrees\n❱ ls -lha\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:32 2026  .\ndrwxr-xr-x neil neil  12 KB Fri May  1 09:21:25 2026  ..\n.rw-r--r-- neil neil 131 B  Fri May  1 09:21:32 2026  config\n.rw-r--r-- neil neil  73 B  Fri May  1 09:21:25 2026  description\n.rw-r--r-- neil neil  21 B  Fri May  1 09:21:32 2026  HEAD\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  hooks\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  info\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  objects\n.rw-r--r-- neil neil 103 B  Fri May  1 09:21:32 2026  packed-refs\ndrwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:32 2026  refs\n\nNormally when you clone a repository you get all the files in the initial clone. You can use worktrees from such a setup but a common strategy for using worktrees is to clone a bare repository. In such a case the directory contains all of the configuration files that normally reside within the .git/ directory of a cloned repository."
+  },
+  {
+    "objectID": "index.html#creating-worktrees",
+    "href": "index.html#creating-worktrees",
+    "title": "Git Worktrees",
+    "section": "Creating Worktrees",
+    "text": "Creating Worktrees\n\nTypically want a copy of main.\ngit worktree add takes two main arguments, the branch and the path.\n\ngit worktree add main main\nWhen you come to create a new feature branch the directory can be anywhere!\ngit worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch\nWe can make worktrees from remote branches if we fetch them first\ngit fetch origin ns-rse/dummy:ns-rse/dummy\ngit worktree add ns-rse/dummy ns-rse/dummy"
+  },
+  {
+    "objectID": "index.html#two-worktrees",
+    "href": "index.html#two-worktrees",
+    "title": "Git Worktrees",
+    "section": "Two Worktrees",
+    "text": "Two Worktrees\nWithin ns-rse/\n❱ tree ns-rse\n[4.0K May  1 09:44]  ns-rse\n├── [4.0K May  1 09:44]  ns-rse/dummy\n│   ├── [4.0K May  1 09:44]  ns-rse/dummy/img\n│   │   └── [ 34K May  1 09:44]  ns-rse/dummy/img/OSC_Sheffield.png\n│   ├── [7.9K May  1 09:44]  ns-rse/dummy/index.qmd\n│   ├── [6.9K May  1 09:44]  ns-rse/dummy/LICENSE\n│   ├── [ 158 May  1 09:44]  ns-rse/dummy/_quarto.yml\n│   ├── [7.7K May  1 09:44]  ns-rse/dummy/README.md\n│   ├── [4.0K May  1 09:44]  ns-rse/dummy/renv\n│   │   ├── [ 32K May  1 09:44]  ns-rse/dummy/renv/activate.R\n│   │   └── [ 412 May  1 09:44]  ns-rse/dummy/renv/settings.json\n│   ├── [ 15K May  1 09:44]  ns-rse/dummy/renv.lock\n│   └── [  24 May  1 09:44]  ns-rse/dummy/requirements.txt\n└── [4.0K May  1 09:40]  ns-rse/new-branch\n    ├── [4.0K May  1 09:40]  ns-rse/new-branch/img\n    │   └── [ 34K May  1 09:40]  ns-rse/new-branch/img/OSC_Sheffield.png\n    ├── [7.9K May  1 09:40]  ns-rse/new-branch/index.qmd\n    ├── [6.9K May  1 09:40]  ns-rse/new-branch/LICENSE\n    ├── [ 158 May  1 09:40]  ns-rse/new-branch/_quarto.yml\n    ├── [7.7K May  1 09:40]  ns-rse/new-branch/README.md\n    ├── [4.0K May  1 09:40]  ns-rse/new-branch/renv\n    │   ├── [ 32K May  1 09:40]  ns-rse/new-branch/renv/activate.R\n    │   └── [ 412 May  1 09:40]  ns-rse/new-branch/renv/settings.json\n    ├── [ 15K May  1 09:40]  ns-rse/new-branch/renv.lock\n    └── [  24 May  1 09:40]  ns-rse/new-branch/requirements.txt\n\n7 directories, 18 files"
+  },
+  {
+    "objectID": "index.html#switching-branches-worktrees",
+    "href": "index.html#switching-branches-worktrees",
+    "title": "Git Worktrees",
+    "section": "Switching branches worktrees",
+    "text": "Switching branches worktrees\n\n\nNo Worktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/dummy\nnothing to commit, working tree clean\n\nWorktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/new-branch\nnothing to commit, working tree clean\n\n\n✅ Different branches can have their own virtual environment with different dependencies.\n✅ No need to git stash work in progress to checkout another branch.\n✅ Switching branches is as simple as cd-ing into the directory.\n\n\nSwitching branches is as simple as cd-ing into the directory."
+  },
+  {
+    "objectID": "index.html#challenges",
+    "href": "index.html#challenges",
+    "title": "Git Worktrees",
+    "section": "Challenges",
+    "text": "Challenges\n\nNeed to create virtual environment in each directory.\n\nNB Large dependencies will increase required space.\n\nDiscipline to remove old worktree directory.\n\nNot much more onerous than removing old branches.\nImportant to avoid bloat/space (see above).\n\nNo .justfile"
+  },
+  {
+    "objectID": "index.html#solutions",
+    "href": "index.html#solutions",
+    "title": "Git Worktrees",
+    "section": "Solutions!",
+    "text": "Solutions!\n\nUse a post-checkout hook! 🪄\nPlace the following in hooks/\nUses…\n\ndirenv\njust\npre-commit\nuv\n\nAssumes using nested &lt;github-user&gt;/&lt;branch-name&gt; structure for worktree directories (modify BASE_PATH if needed)."
+  },
+  {
+    "objectID": "index.html#post-checkout-hook",
+    "href": "index.html#post-checkout-hook",
+    "title": "Git Worktrees",
+    "section": "Post-checkout hook",
+    "text": "Post-checkout hook\nInspiration\nFind in my dotfiles.\n#!/bin/bash\n#\n# Inspiration from : https://mskelton.dev/bytes/20230906143340\n#\n# Copy .justfile and .envrc to new worktrees on first checkout and create and activate a virtual environment\n# with uv\n\n# Base directory for bare repository\nBASE_PATH=\"$(git rev-parse --git-dir)/../../\"\n\nif [ ! -f \"${BASE_PATH}/main/.justfile\" ]; then\n  echo \"No .justfile creating a basic skeleton\"\n  echo \"@default:\\n    @just --list\\n\\n\" &gt; main/.justfile\n  echo \"mkdocs:\\n    mkdocs serve --watch docs\" &gt;&gt; main/.justfile\n  echo \"test_profile:\\n    python -m cProfile -o tmp/$(git rev-parse HEAD)_$(date +%Y%m%d).prof $(which pytest) tests/test.py\"\n  echo \"test:\\n    pytest --cov=src --numprocesses=logical\"\n  echo \"pc_ruff\\n    pre-commit run ruff-check --all-files ; pre-commit run ruff-format --all-files\"\n  echo \"pc_npd:\\n    pre-commit run numpydoc-validation --all-files\"\n  echo \"pc_black:\\n    pre-commit run blacken-docs --all-files\"\n  echo \"pc_prettier:\\n    pre-commit run prettier --all-files\"\n  echo \"pc_markdown:\\n    pre-commit run markdownlint-cli2 --all-files\"\n  echo \"pc_pylint:\\n    pre-commit run pylint --all-files\"\nfi\n\nif [ ! -f \"${BASE_PATH}/main/.envrc\" ]; then\n  echo \"No .envrc creating a basic skeleton\"\n  echo \"#!/bin/bash\\nsource .venv/bin/activate\" &gt; main/.envrc\nfi\n\nif [[ \"$1\" == \"0000000000000000000000000000000000000000\" ]]; then\n  # Copy files (they should be in main/)\n  FILES=(\".justfile\" \".envrc\")\n\n  for FILE in \"${FILES[@]}\"; do\n    echo \"Copying main/'${FILE}' to $(pwd)/${FILE}\"\n    cp \"${BASE_PATH}/main/${FILE}\" \"$(pwd)/${FILE}\"\n  done\n\n  # Create a virtual environment using uv and install\n  if [ ! -d \".venv/\" ]; then\n    uv venv\n    uv sync\n    uv pip install -e .\n    # Allow direnv so venv can be activated\n    direnv allow\n  fi\n  # Install pre-commit if not already in place\n  if [ ! -f \"${BASE_PATH}/hooks/pre-commit\" ]; then\n    $(which pre-commit) install\n  fi"
+  },
+  {
+    "objectID": "index.html#emacsmagit-integration",
+    "href": "index.html#emacsmagit-integration",
+    "title": "Git Worktrees",
+    "section": "Emacs/Magit Integration",
+    "text": "Emacs/Magit Integration\n\n✅ Magit, the Git porcelain for Emacs supports worktrees\n✅ Z pulls up the transient buffer for worktree management.\n✅ Still use Forge to interact with issues/pull requests GitHub/GitLab\n\n❌ Using bare clones I’ve found I can’t create pull requests from Forge.\n\n\n  ;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/\n  ;; Show all worktrees at the end of the status buffer (if more than one)\n  (add-hook 'magit-status-sections-hook #'magit-insert-worktrees t)\n\n\n\nEmacs Magit Worktrees"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Git Worktrees",
+    "section": "",
+    "text": "Julia Evans (@bork)"
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "Git Worktrees",
+    "section": "Links",
+    "text": "Links\n\nPractical Guide to Git Worktree - DEV Community\nGit Worktrees in Use. Most of us use Git every day, but… &lt;&lt; This seems good, clearest so far.\nGit - git-worktree Documentation\nGit Worktrees: Git Done Right - Just Some Dev\nImproving my productivity and context switching with git worktrees\nGitKraken - How to Use Git Worktree | Add, List, Remove\n\nHooks\n\nUsing Git Hooks When Creating Worktrees | Mark Skelton\ngithooks - Using Git hooks with worktree - Stack Overflow\n\nTools\n\nabtris/worktree-util: Simple utility for working with git worktree\n\n\n\n\n\n\n\n\n \n\n\nQuarto RevealJS Template"
+  }
+]
