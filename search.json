@@ -11,14 +11,14 @@
     "href": "index.html#git-worktrees",
     "title": "Git Worktrees",
     "section": "Git Worktrees",
-    "text": "Git Worktrees\n\nWhat?\nWhy?\nChallenges?"
+    "text": "Git Worktrees\n\nWhy?\nChallenges?"
   },
   {
-    "objectID": "index.html#what-are-worktrees",
-    "href": "index.html#what-are-worktrees",
+    "objectID": "index.html#why-worktrees",
+    "href": "index.html#why-worktrees",
     "title": "Git Worktrees",
-    "section": "What are Worktrees?",
-    "text": "What are Worktrees?\n\nSingle clone of a repository.\nBranches live in their own directory.\ncd to/worktree and you check it out."
+    "section": "Why Worktrees?",
+    "text": "Why Worktrees?\n\nSingle clone of a repository.\nBranches live in their own directory.\ncd to/worktree and you check it out.\nNo need to stash work-in-progress to checkout branches.\nSingle Git history (no need for multiple git clone)"
   },
   {
     "objectID": "index.html#no-worktrees",
@@ -53,7 +53,7 @@
     "href": "index.html#switching-branches-worktrees",
     "title": "Git Worktrees",
     "section": "Switching branches worktrees",
-    "text": "Switching branches worktrees\n\n\nNo Worktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/dummy\nnothing to commit, working tree clean\n\nWorktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/new-branch\nnothing to commit, working tree clean\n\n\n✅ Different branches can have their own virtual environment with different dependencies.\n✅ No need to git stash work in progress to checkout another branch.\n✅ Switching branches is as simple as cd-ing into the directory.\n\n\nSwitching branches is as simple as cd-ing into the directory."
+    "text": "Switching branches worktrees\n\n\nNo Worktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/dummy\nnothing to commit, working tree clean\n\nWorktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/new-branch\nnothing to commit, working tree clean\n\n\n✅ Different branches can have their own virtual environment with different dependencies.\n✅ No need to git stash work in progress to checkout another branch.\n✅ Switching branches is as simple as cd-ing into the directory1.\n\n\nSwitching branches is as simple as cd-ing into the directory.\n\nAlthough you don’t have to maintain a worktree for each branch."
   },
   {
     "objectID": "index.html#challenges",

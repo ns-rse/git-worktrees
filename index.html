@@ -6,12 +6,12 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/grid-htext-1.0.0/grid_htext.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+  <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Neil Shephard">
   <title>Git Worktrees</title>
@@ -238,17 +238,18 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <section id="git-worktrees" class="slide level2">
 <h2>Git Worktrees</h2>
 <ul>
-<li>What?</li>
 <li>Why?</li>
 <li>Challenges?</li>
 </ul>
 </section>
-<section id="what-are-worktrees" class="slide level2">
-<h2>What are Worktrees?</h2>
+<section id="why-worktrees" class="slide level2">
+<h2>Why Worktrees?</h2>
 <ul>
 <li>Single clone of a repository.</li>
 <li>Branches live in their own directory.</li>
 <li><code>cd to/worktree</code> and you check it out.</li>
+<li>No need to stash work-in-progress to checkout branches.</li>
+<li>Single Git history (no need for multiple <code>git clone</code>)</li>
 </ul>
 </section>
 <section id="no-worktrees" class="slide level2">
@@ -356,7 +357,7 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <span id="cb7-27"><a></a></span>
 <span id="cb7-28"><a></a>7 directories, 18 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="switching-branches-worktrees" class="slide level2">
+<section id="switching-branches-worktrees" class="slide level2 scrollable">
 <h2>Switching <sub>branches</sub> worktrees</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -375,7 +376,7 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <ul>
 <li>✅ Different branches can have their own virtual environment with different dependencies.</li>
 <li>✅ No need to <code>git stash</code> work in progress to checkout another branch.</li>
-<li>✅ Switching branches is as simple as <code>cd</code>-ing into the directory.</li>
+<li>✅ Switching branches is as simple as <code>cd</code>-ing into the directory<sup>1</sup>.</li>
 </ul>
 <aside class="notes">
 <p>Switching branches is as simple as <code>cd</code>-ing into the directory.</p>
@@ -390,7 +391,7 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Although you <em>don’t</em> have to maintain a worktree for each branch.</p></li></ol></aside></section>
 <section id="challenges" class="slide level2">
 <h2>Challenges</h2>
 <ul>
@@ -538,6 +539,7 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 </div>
 </div>
 </section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
