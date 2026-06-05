@@ -39,16 +39,16 @@ filters:
 
 ## Git Worktrees
 
-- What?
 - Why?
 - Challenges?
 
-## What are Worktrees?
+## Why Worktrees?
 
 - Single clone of a repository.
 - Branches live in their own directory.
 - `cd to/worktree` and you check it out.
-
+- No need to stash work-in-progress to checkout branches.
+- Single Git history (no need for multiple `git clone`)
 
 ## No Worktrees
 
@@ -196,8 +196,10 @@ nothing to commit, working tree clean
 
 - ✅ Different branches can have their own virtual environment with different dependencies.
 - ✅ No need to `git stash` work in progress to checkout another branch.
-- ✅ Switching branches is as simple as `cd`-ing into the directory.
+- ✅ Switching branches is as simple as `cd`-ing into the directory[^1].
 
+
+[^1]: Although you _don't_ have to maintain a worktree for each branch.
 
 ::: {.notes}
 Switching branches is as simple as `cd`-ing into the directory.
