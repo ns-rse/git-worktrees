@@ -53,7 +53,7 @@
     "href": "index.html#switching-branches-worktrees",
     "title": "Git Worktrees",
     "section": "Switching branches worktrees",
-    "text": "Switching branches worktrees\n\n\nNo Worktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/dummy\nnothing to commit, working tree clean\n\nWorktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/new-branch\nnothing to commit, working tree clean\n\n\n✅ Different branches can have their own virtual environment with different dependencies.\n✅ No need to git stash work in progress to checkout another branch.\n✅ Switching branches is as simple as cd-ing into the directory1.\n\n\nSwitching branches is as simple as cd-ing into the directory.\n\nAlthough you don’t have to maintain a worktree for each branch."
+    "text": "Switching branches worktrees\nDuring work in-progress…\n\n\nNo Worktrees\n❱ git stash save --keep-index\n❱ git switch ns-rse/dummy\n❱ git status\nOn branch ns-rse/dummy\nnothing to commit, working tree clean\n\nWorktrees\n❱ cd ns-rse/dummy\n❱ git status\nOn branch ns-rse/dummy\nnothing to commit, working tree clean\n\n\n✅ Different branches can have their own virtual environment with different dependencies.\n✅ No need to git stash work in progress to checkout another branch.\n✅ Switching branches is as simple as cd-ing into the directory1.\n\n\nSwitching branches is as simple as cd-ing into the directory.\n\nAlthough you don’t have to maintain a worktree for each branch."
   },
   {
     "objectID": "index.html#challenges",
@@ -67,7 +67,7 @@
     "href": "index.html#solutions",
     "title": "Git Worktrees",
     "section": "Solutions!",
-    "text": "Solutions!\n\nBloated directories requires discipline to remove old worktree directory.\n\nNot more onerous than removing old branches.\n\nUse a post-checkout hook to setup virtual environment, pre-commit and just! 🪄\n\nUses…\n\ndirenv\njust\npre-commit\nuv\n\nAssumes using nested &lt;github-user&gt;/&lt;branch-name&gt; structure for worktree directories (modify BASE_PATH if needed)."
+    "text": "Solutions!\n\nBloated directories require discipline to remove old worktree directory.\n\nNot more onerous than removing old branches.\n\nUse a post-checkout hook to setup virtual environment, pre-commit and just! 🪄\n\nUses…\n\ndirenv\njust\npre-commit\nuv\n\nAssumes using nested &lt;github-user&gt;/&lt;branch-name&gt; structure for worktree directories (modify BASE_PATH if needed)."
   },
   {
     "objectID": "index.html#post-checkout-hook",
