@@ -201,13 +201,11 @@ nothing to commit, working tree clean
 - ✅ No need to `git stash` work in progress to checkout another branch.
 - ✅ Switching branches is as simple as `cd`-ing into the directory[^1].
 
-
 [^1]: Although you _don't_ have to maintain a worktree for each branch.
 
 ::: {.notes}
 Switching branches is as simple as `cd`-ing into the directory.
 :::
-
 
 ## Challenges
 
@@ -216,7 +214,7 @@ Switching branches is as simple as `cd`-ing into the directory.
 - No `pre-commit` installed in worktree
 - No [`.justfile`](https://just.systems/man/en/)
 
-## Solutions!
+## Solutions
 
 - Bloated directories require discipline to remove old worktree directory.
   - Not more onerous than removing old branches.
@@ -228,7 +226,6 @@ Switching branches is as simple as `cd`-ing into the directory.
     - [`uv`](https://docs.astral.sh/uv)
   - Assumes using nested `<github-user>/<branch-name>` structure for worktree directories (modify `BASE_PATH` if needed).
 
-
 ## Post-checkout hook
 
 [Inspiration](https://mskelton.dev/bytes/20230906143340)
@@ -236,57 +233,218 @@ Switching branches is as simple as `cd`-ing into the directory.
 Find in my [dotfiles](https://codeberg.org/slackline/dotfiles/src/branch/master/.config/git/hooks/post-checkout).
 
 ```bash
-#!/bin/bash
-#
-# Inspiration from : https://mskelton.dev/bytes/20230906143340
-#
-# Copy .justfile and .envrc to new worktrees on first checkout and create and activate a virtual environment
-# with uv
-
-# Base directory for bare repository
-BASE_PATH="$(git rev-parse --git-dir)/../../"
-
-if [ ! -f "${BASE_PATH}/main/.justfile" ]; then
-  echo "No .justfile creating a basic skeleton"
-  echo "@default:\n    @just --list\n\n" > main/.justfile
-  echo "mkdocs:\n    mkdocs serve --watch docs" >> main/.justfile
-  echo "test_profile:\n    python -m cProfile -o tmp/$(git rev-parse HEAD)_$(date +%Y%m%d).prof $(which pytest) tests/test.py"
-  echo "test:\n    pytest --cov=src --numprocesses=logical"
-  echo "pc_ruff\n    pre-commit run ruff-check --all-files ; pre-commit run ruff-format --all-files"
-  echo "pc_npd:\n    pre-commit run numpydoc-validation --all-files"
-  echo "pc_black:\n    pre-commit run blacken-docs --all-files"
-  echo "pc_prettier:\n    pre-commit run prettier --all-files"
-  echo "pc_markdown:\n    pre-commit run markdownlint-cli2 --all-files"
-  echo "pc_pylint:\n    pre-commit run pylint --all-files"
-fi
-
-if [ ! -f "${BASE_PATH}/main/.envrc" ]; then
-  echo "No .envrc creating a basic skeleton"
-  echo "#!/bin/bash\nsource .venv/bin/activate" > main/.envrc
-fi
-
 if [[ "$1" == "0000000000000000000000000000000000000000" ]]; then
-  # Copy files (they should be in main/)
-  FILES=(".justfile" ".envrc")
+  # Base directory for bare repository
+  BASE_PATH="$(git rev-parse --git-dir)/../../"
+  MAIN_PATH="${BASE_PATH}/main"
+  # If main/.justfile doesn't exist create it
+  if [ ! -f "${MAIN_PATH}/.justfile" ]; then
+    echo "No .justfile creating a basic skeleton"
+    printf "
+@default:
+    @just --list
+" > ${MAIN_PATH}/.justfile
+    printf "
+# Profile a test file
+test_profile:
+    mkdir prof
+    python -m cProfile -o prof/$(git rev-parse HEAD)_$(date +%Y%m%d).prof $(which pytest) tests/test_<file>.py
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Serve mkdocs
+mkdocs:
+    mkdocs serve --watch docs" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pre-commit ruff-check all files
+pc_ruff:
+    pre-commit run ruff-check --all-files ; pre-commit run ruff-format --all-files
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pre-commit ruff-check all files
+pc_npd:
+    pre-commit run numpydoc-validation --all-files
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pre-commit blacken all files
+pc_black:
+    pre-commit run blacken-docs --all-files
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pre-commit prettier all files
+pc_prettier:
+    pre-commit run prettier --all-files
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pre-commit markdownlint-cli2 all files
+pc_markdown:
+    pre-commit run markdownlint-cli2 --all-files
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pre-commit pylint all files
+pc_pylint:
+    pre-commit run pylint --all-files
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pytest everything
+pytest:
+    pytest --cov=src --cov-branch --numprocesses=logical
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pytest with Matplotlib html report
+pytest_mpl_html_report:
+    mkdir -p tmp/mpl
+    pytest tests/test_plotting.py --mpl-generate-summary html --mpl-results-path tmp/mpl
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pytest update Matplotlib snapshots
+pytest_mpl_update:
+    mkdir -p tests/__mpl_snapshots__/
+    pytest tests/test_plotting.py --mpl-generate-path=tests/__mpl_snapshots__
+    pytest tests/test_classes.py --mpl-generate-path=tests/__mpl_snapshots__
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pytest update Syrupy snapshots
+pytest_snapshot_update:
+    pytest --snapshot-update
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# Pytest update Maplotlib and Syrupy snapshots
+pytest_update:
+    just pytest_mpl_update
+    just pytest_snapshot_update
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# uv sync and lock
+uv_upgrade:
+    uv sync
+    uv lock --upgrade
+" >> ${MAIN_PATH}/.justfile
+    printf "
+# uv pip install all
+pip_install:
+    uv pip install --editable . --group dev
 
+" >> ${MAIN_PATH}/.justfile
+    printf "" >> ${MAIN_PATH}/.justfile
+  fi
+  # If main/envrc doesn't exist create it
+  if [ ! -f "${MAIN_PATH}/.envrc" ]; then
+    echo "No .envrc creating a basic skeleton"
+    printf "#!/bin/bash
+source .venv/bin/activate
+export PATH=${VIRTUAL_ENV}/bin:${PATH}" > ${MAIN_PATH}/.envrc
+  fi
+  # Copy main/.{envrc,justfiles} to current directory
+  FILES=(".justfile" ".envrc")
   for FILE in "${FILES[@]}"; do
     echo "Copying main/'${FILE}' to $(pwd)/${FILE}"
-	cp "${BASE_PATH}/main/${FILE}" "$(pwd)/${FILE}"
+    cp "${MAIN_PATH}/${FILE}" "$(pwd)/${FILE}"
   done
-
-  # Create a virtual environment using uv and install
+  # Create a virtual environment using uv and install the current Python package
   if [ ! -d ".venv/" ]; then
     uv venv
     uv sync
-    uv pip install -e .
+    just pip_install
     # Allow direnv so venv can be activated
-    direnv allow
+    if [ -f ".envrc" ]; then
+      direnv allow
+    fi
   fi
-  # Install pre-commit if not already in place
+  # Enable pre-commit if not already enabled
   if [ ! -f "${BASE_PATH}/hooks/pre-commit" ]; then
-    $(which pre-commit) install
+    pre-commit install
   fi
+fi
 ```
+
+## Resulting `.justfile`
+
+``` shell
+@default:
+    @just --list
+
+# Profile a test file.
+test_profile:
+    mkdir prof
+    python -m cProfile -o prof/$(git rev-parse HEAD)_$(date +%Y%m%d).prof $(which pytest) tests/test_<file>.py
+
+# uv pip install package with dev group dependencies
+pip_install:
+    uv pip install --editable . --group dev
+
+# Serve mkdocs
+mkdocs:
+    mkdocs serve --watch docs
+
+# Pre-commit ruff-check all files
+pc_ruff:
+    pre-commit run ruff-check --all-files
+
+# Pre-commit numpydoc all files
+pc_npd:
+    pre-commit run numpydoc-validation --all-files
+
+# Pre-commit blacken all files
+pc_black:
+    pre-commit run blacken-docs --all-files
+
+# Pre-commit prettier all files
+pc_prettier:
+    pre-commit run prettier --all-files
+
+# Pre-commit markdownlint-cli2 all files
+pc_markdown:
+    pre-commit run markdownlint-cli2 --all-files
+
+# Pre-commit pylint all files
+pc_pylint:
+    pre-commit run pylint --all-files
+
+# Pytest everything
+pytest:
+    pytest --cov=src --cov-branch --numprocesses=logical
+
+# Pytest with Matplotlib html report
+pytest_mpl_html_report:
+    mkdir -p tmp/mpl
+    pytest tests/test_plotting.py --mpl-generate-summary html --mpl-results-path tmp/mpl
+
+# Pytest update Matplotlib snapshots
+pytest_mpl_update:
+    mkdir -p tests/__mpl_snapshots__/
+    pytest tests/test_plotting.py --mpl-generate-path=tests/__mpl_snapshots__
+    pytest tests/test_classes.py --mpl-generate-path=tests/__mpl_snapshots__
+
+# Pytest update Syrupy snapshots
+pytest_snapshot_update:
+    pytest --snapshot-update
+
+# Pytest update Maplotlib and Syrupy snapshots
+pytest_update:
+    just pytest_mpl_update
+    just pytest_snapshot_update
+
+# uv sync and lock
+uv_upgrade:
+    uv sync
+    uv lock --upgrade
+```
+
+## Resulting `.envrc`
+
+```
+#!/bin/bash
+source .venv/bin/activate
+export PATH=${VIRTUAL_ENV}/bin:${PATH}
+
+```
+
+## New worktree
+
+- ✅ `.justfile` with lots of runners defined.
+- ✅ `uv` virtual environment created and synced.
+- ✅ Working `.envrc` and `direnv allow` run.
+- ✅ `pre-commit` hooks installed and set to run.
 
 ## Emacs/Magit Integration
 
