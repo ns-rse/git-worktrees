@@ -75,6 +75,26 @@ drwxr-xr-x neil neil 4.0 KB Fri May  1 09:14:19 2026  renv
 .rw-r--r-- neil neil  24 B  Fri May  1 09:07:38 2026 󰌠 requirements.txt
 ```
 
+## Config directory
+
+```shell
+❱ ls -lha .git
+drwxr-xr-x neil neil 4.0 KB Wed Sep 23 09:28:15 2026  .
+drwxr-xr-x neil neil 4.0 KB Tue Sep 22 12:17:46 2026  ..
+.rw-r--r-- neil neil 459 B  Fri May  1 11:58:15 2026  config
+.rw-r--r-- neil neil  73 B  Fri May  1 09:07:36 2026  description
+.rw-r--r-- neil neil  21 B  Fri May  1 09:07:38 2026  HEAD
+drwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:36 2026  hooks
+.rw-r--r-- neil neil 1.4 KB Tue Sep 22 11:59:46 2026  index
+drwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:36 2026  info
+drwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:38 2026  logs
+drwxr-xr-x neil neil 4.0 KB Tue Sep 22 12:33:47 2026  objects
+.rw-r--r-- neil neil 112 B  Fri May  1 09:07:38 2026  packed-refs
+drwxr-xr-x neil neil 4.0 KB Fri May  1 11:58:37 2026  refs
+drwxr-xr-x neil neil 4.0 KB Fri May  1 11:40:23 2026  rr-cache
+drwxr-xr-x neil neil 4.0 KB Fri May  1 11:40:40 2026  worktrees
+```
+
 ## Worktrees
 
 ```shell
@@ -92,6 +112,8 @@ drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  objects
 .rw-r--r-- neil neil 103 B  Fri May  1 09:21:32 2026  packed-refs
 drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:32 2026  refs
 ```
+
+But where are my files? 🤷🤔
 
 ::: {.notes}
 Normally when you clone a repository you get all the files in the initial clone. You can use worktrees from such a setup
@@ -218,13 +240,12 @@ Switching branches is as simple as `cd`-ing into the directory.
 
 - Bloated directories require discipline to remove old worktree directory.
   - Not more onerous than removing old branches.
-- Use a `post-checkout` hook to setup virtual environment, pre-commit and just! 🪄
-  - Uses...
-    - [`direnv`](https://direnv.net/)
-    - [`just`](https://just.systems/man/en/)
-    - [`pre-commit`](https://pre-commit.com)
-    - [`uv`](https://docs.astral.sh/uv)
-  - Assumes using nested `<github-user>/<branch-name>` structure for worktree directories (modify `BASE_PATH` if needed).
+- Use a `post-checkout` hook 🪄
+  - setup a virtual environment with [`uv`](https://docs.astral.sh/uv)
+  - add a `.justfile` for the [`just`](https://just.systems/man/en/) runner
+  - add a `.envrc` and allow [`direnv`](https://direnv.net/) in the worktree directory
+  - install [`pre-commit`](https://pre-commit.com) hooks
+- Assumes using nested `<github-user>/<branch-name>` structure for worktree directories (modify `BASE_PATH` if needed).
 
 ## Post-checkout hook
 
@@ -233,6 +254,10 @@ Switching branches is as simple as `cd`-ing into the directory.
 Find in my [dotfiles](https://codeberg.org/slackline/dotfiles/src/branch/master/.config/git/hooks/post-checkout).
 
 ```bash
+#!/bin/bash
+#
+# Inspiration from : https://mskelton.dev/bytes/20230906143340
+#
 if [[ "$1" == "0000000000000000000000000000000000000000" ]]; then
   # Base directory for bare repository
   BASE_PATH="$(git rev-parse --git-dir)/../../"
