@@ -33,12 +33,14 @@ filters:
 
 ## Scan This
 
-{{< qrcode <https://ns-rse.github.io/git-worktrees> qr1 width=400 height=400 >}}
+{{< qrcode <https://blog.nshephard.dev/git-worktrees> qr1 width=400 height=400 >}}
 
-[ns-rse.github.io/git-worktrees](https://ns-rse.github.io/git-worktrees)
+[blog.nshephard.dev/git-worktrees](https://blog.nshephard.dev/git-worktrees)
 
 ## Git Worktrees
 
+- First encountered in [2024](https://blog.nshephard.dev/posts/git-worktrees/)
+- Only started using widely five months ago
 - Why?
 - Challenges?
 
@@ -490,6 +492,12 @@ export PATH=${VIRTUAL_ENV}/bin:${PATH}
 
 ![[Julia Evans
 (@bork)](https://wizardzines.com/comics/git-worktree/)](https://wizardzines.com/images/uploads/git-worktree.png)
+
+## Blog Post
+
+{{< qrcode <https://blog.nshephard.dev/git-worktree-hooks> qr1 width=400 height=400 >}}
+
+[blog.nshephard.dev/posts/git-worktree-hooks/](https://blog.nshephard.dev/posts/git-worktree-hooks/)
 
 ## Links
 
