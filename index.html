@@ -278,21 +278,40 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <span id="cb1-19"><a aria-label="19"></a>.rw-r--r-- neil neil  15 KB Fri May  1 09:07:38 2026  renv.lock</span>
 <span id="cb1-20"><a aria-label="20"></a>.rw-r--r-- neil neil  24 B  Fri May  1 09:07:38 2026 󰌠 requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="config-directory" class="slide level2">
+<h2>Config directory</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>❱ ls -lha .git</span>
+<span id="cb2-2"><a aria-label="2"></a>drwxr-xr-x neil neil 4.0 KB Wed Sep 23 09:28:15 2026  .</span>
+<span id="cb2-3"><a aria-label="3"></a>drwxr-xr-x neil neil 4.0 KB Tue Sep 22 12:17:46 2026  ..</span>
+<span id="cb2-4"><a aria-label="4"></a>.rw-r--r-- neil neil 459 B  Fri May  1 11:58:15 2026  config</span>
+<span id="cb2-5"><a aria-label="5"></a>.rw-r--r-- neil neil  73 B  Fri May  1 09:07:36 2026  description</span>
+<span id="cb2-6"><a aria-label="6"></a>.rw-r--r-- neil neil  21 B  Fri May  1 09:07:38 2026  HEAD</span>
+<span id="cb2-7"><a aria-label="7"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:36 2026  hooks</span>
+<span id="cb2-8"><a aria-label="8"></a>.rw-r--r-- neil neil 1.4 KB Tue Sep 22 11:59:46 2026  index</span>
+<span id="cb2-9"><a aria-label="9"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:36 2026  info</span>
+<span id="cb2-10"><a aria-label="10"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:07:38 2026  logs</span>
+<span id="cb2-11"><a aria-label="11"></a>drwxr-xr-x neil neil 4.0 KB Tue Sep 22 12:33:47 2026  objects</span>
+<span id="cb2-12"><a aria-label="12"></a>.rw-r--r-- neil neil 112 B  Fri May  1 09:07:38 2026  packed-refs</span>
+<span id="cb2-13"><a aria-label="13"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 11:58:37 2026  refs</span>
+<span id="cb2-14"><a aria-label="14"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 11:40:23 2026  rr-cache</span>
+<span id="cb2-15"><a aria-label="15"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 11:40:40 2026  worktrees</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="worktrees" class="slide level2">
 <h2>Worktrees</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>❱ git clone --bare git@github.com:ns-rse/git-worktrees.git git-worktrees</span>
-<span id="cb2-2"><a aria-label="2"></a>❱ cd git-worktrees</span>
-<span id="cb2-3"><a aria-label="3"></a>❱ ls -lha</span>
-<span id="cb2-4"><a aria-label="4"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:32 2026  .</span>
-<span id="cb2-5"><a aria-label="5"></a>drwxr-xr-x neil neil  12 KB Fri May  1 09:21:25 2026  ..</span>
-<span id="cb2-6"><a aria-label="6"></a>.rw-r--r-- neil neil 131 B  Fri May  1 09:21:32 2026  config</span>
-<span id="cb2-7"><a aria-label="7"></a>.rw-r--r-- neil neil  73 B  Fri May  1 09:21:25 2026  description</span>
-<span id="cb2-8"><a aria-label="8"></a>.rw-r--r-- neil neil  21 B  Fri May  1 09:21:32 2026  HEAD</span>
-<span id="cb2-9"><a aria-label="9"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  hooks</span>
-<span id="cb2-10"><a aria-label="10"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  info</span>
-<span id="cb2-11"><a aria-label="11"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  objects</span>
-<span id="cb2-12"><a aria-label="12"></a>.rw-r--r-- neil neil 103 B  Fri May  1 09:21:32 2026  packed-refs</span>
-<span id="cb2-13"><a aria-label="13"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:32 2026  refs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>❱ git clone --bare git@github.com:ns-rse/git-worktrees.git git-worktrees</span>
+<span id="cb3-2"><a aria-label="2"></a>❱ cd git-worktrees</span>
+<span id="cb3-3"><a aria-label="3"></a>❱ ls -lha</span>
+<span id="cb3-4"><a aria-label="4"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:32 2026  .</span>
+<span id="cb3-5"><a aria-label="5"></a>drwxr-xr-x neil neil  12 KB Fri May  1 09:21:25 2026  ..</span>
+<span id="cb3-6"><a aria-label="6"></a>.rw-r--r-- neil neil 131 B  Fri May  1 09:21:32 2026  config</span>
+<span id="cb3-7"><a aria-label="7"></a>.rw-r--r-- neil neil  73 B  Fri May  1 09:21:25 2026  description</span>
+<span id="cb3-8"><a aria-label="8"></a>.rw-r--r-- neil neil  21 B  Fri May  1 09:21:32 2026  HEAD</span>
+<span id="cb3-9"><a aria-label="9"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  hooks</span>
+<span id="cb3-10"><a aria-label="10"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  info</span>
+<span id="cb3-11"><a aria-label="11"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:25 2026  objects</span>
+<span id="cb3-12"><a aria-label="12"></a>.rw-r--r-- neil neil 103 B  Fri May  1 09:21:32 2026  packed-refs</span>
+<span id="cb3-13"><a aria-label="13"></a>drwxr-xr-x neil neil 4.0 KB Fri May  1 09:21:32 2026  refs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>But where are my files? 🤷🤔</p>
 <aside class="notes">
 <p>Normally when you clone a repository you get all the files in the initial clone. You can use worktrees from such a setup but a common strategy for using worktrees is to clone a bare repository. In such a case the directory contains all of the configuration files that normally reside within the <sub>.git/</sub> directory of a cloned repository.</p>
 <style type="text/css">
@@ -313,52 +332,52 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <li>Typically want a copy of <code>main</code>.</li>
 <li><code>git worktree add</code> takes two main arguments, the <code>branch</code> and the <code>path</code>.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>❱ git worktree add main main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>❱ git worktree add main main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Create <code>ns-rse/new-branch</code> branch in <code>ns-rse/new-branch/</code> directory</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>❱ git worktree add -b ns-rse/new-branch ns-rse/new-branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Directories can be <em>anywhere</em>!</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>❱ git worktree add -b ns-rse/new-branch ~/a/completely/different/directory/ns-rse/new-branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Fetch remote branches first</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>❱ git fetch origin ns-rse/dummy:ns-rse/dummy</span>
-<span id="cb6-2"><a aria-label="2"></a>❱ git worktree add ns-rse/dummy ns-rse/dummy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>❱ git fetch origin ns-rse/dummy:ns-rse/dummy</span>
+<span id="cb7-2"><a aria-label="2"></a>❱ git worktree add ns-rse/dummy ns-rse/dummy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="two-worktrees" class="slide level2">
 <h2>Two Worktrees</h2>
 <p>Within <code>ns-rse/</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>❱ tree ns-rse</span>
-<span id="cb7-2"><a aria-label="2"></a>[4.0K May  1 09:44]  ns-rse</span>
-<span id="cb7-3"><a aria-label="3"></a>├── [4.0K May  1 09:44]  ns-rse/dummy</span>
-<span id="cb7-4"><a aria-label="4"></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/img</span>
-<span id="cb7-5"><a aria-label="5"></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 34K May  1 09:44]  ns-rse/dummy/img/OSC_Sheffield.png</span>
-<span id="cb7-6"><a aria-label="6"></a>│&nbsp;&nbsp; ├── [7.9K May  1 09:44]  ns-rse/dummy/index.qmd</span>
-<span id="cb7-7"><a aria-label="7"></a>│&nbsp;&nbsp; ├── [6.9K May  1 09:44]  ns-rse/dummy/LICENSE</span>
-<span id="cb7-8"><a aria-label="8"></a>│&nbsp;&nbsp; ├── [ 158 May  1 09:44]  ns-rse/dummy/_quarto.yml</span>
-<span id="cb7-9"><a aria-label="9"></a>│&nbsp;&nbsp; ├── [7.7K May  1 09:44]  ns-rse/dummy/README.md</span>
-<span id="cb7-10"><a aria-label="10"></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/renv</span>
-<span id="cb7-11"><a aria-label="11"></a>│&nbsp;&nbsp; │&nbsp;&nbsp; ├── [ 32K May  1 09:44]  ns-rse/dummy/renv/activate.R</span>
-<span id="cb7-12"><a aria-label="12"></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 412 May  1 09:44]  ns-rse/dummy/renv/settings.json</span>
-<span id="cb7-13"><a aria-label="13"></a>│&nbsp;&nbsp; ├── [ 15K May  1 09:44]  ns-rse/dummy/renv.lock</span>
-<span id="cb7-14"><a aria-label="14"></a>│&nbsp;&nbsp; └── [  24 May  1 09:44]  ns-rse/dummy/requirements.txt</span>
-<span id="cb7-15"><a aria-label="15"></a>└── [4.0K May  1 09:40]  ns-rse/new-branch</span>
-<span id="cb7-16"><a aria-label="16"></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/img</span>
-<span id="cb7-17"><a aria-label="17"></a>    │&nbsp;&nbsp; └── [ 34K May  1 09:40]  ns-rse/new-branch/img/OSC_Sheffield.png</span>
-<span id="cb7-18"><a aria-label="18"></a>    ├── [7.9K May  1 09:40]  ns-rse/new-branch/index.qmd</span>
-<span id="cb7-19"><a aria-label="19"></a>    ├── [6.9K May  1 09:40]  ns-rse/new-branch/LICENSE</span>
-<span id="cb7-20"><a aria-label="20"></a>    ├── [ 158 May  1 09:40]  ns-rse/new-branch/_quarto.yml</span>
-<span id="cb7-21"><a aria-label="21"></a>    ├── [7.7K May  1 09:40]  ns-rse/new-branch/README.md</span>
-<span id="cb7-22"><a aria-label="22"></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/renv</span>
-<span id="cb7-23"><a aria-label="23"></a>    │&nbsp;&nbsp; ├── [ 32K May  1 09:40]  ns-rse/new-branch/renv/activate.R</span>
-<span id="cb7-24"><a aria-label="24"></a>    │&nbsp;&nbsp; └── [ 412 May  1 09:40]  ns-rse/new-branch/renv/settings.json</span>
-<span id="cb7-25"><a aria-label="25"></a>    ├── [ 15K May  1 09:40]  ns-rse/new-branch/renv.lock</span>
-<span id="cb7-26"><a aria-label="26"></a>    └── [  24 May  1 09:40]  ns-rse/new-branch/requirements.txt</span>
-<span id="cb7-27"><a aria-label="27"></a></span>
-<span id="cb7-28"><a aria-label="28"></a>7 directories, 18 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>❱ tree ns-rse</span>
+<span id="cb8-2"><a aria-label="2"></a>[4.0K May  1 09:44]  ns-rse</span>
+<span id="cb8-3"><a aria-label="3"></a>├── [4.0K May  1 09:44]  ns-rse/dummy</span>
+<span id="cb8-4"><a aria-label="4"></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/img</span>
+<span id="cb8-5"><a aria-label="5"></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 34K May  1 09:44]  ns-rse/dummy/img/OSC_Sheffield.png</span>
+<span id="cb8-6"><a aria-label="6"></a>│&nbsp;&nbsp; ├── [7.9K May  1 09:44]  ns-rse/dummy/index.qmd</span>
+<span id="cb8-7"><a aria-label="7"></a>│&nbsp;&nbsp; ├── [6.9K May  1 09:44]  ns-rse/dummy/LICENSE</span>
+<span id="cb8-8"><a aria-label="8"></a>│&nbsp;&nbsp; ├── [ 158 May  1 09:44]  ns-rse/dummy/_quarto.yml</span>
+<span id="cb8-9"><a aria-label="9"></a>│&nbsp;&nbsp; ├── [7.7K May  1 09:44]  ns-rse/dummy/README.md</span>
+<span id="cb8-10"><a aria-label="10"></a>│&nbsp;&nbsp; ├── [4.0K May  1 09:44]  ns-rse/dummy/renv</span>
+<span id="cb8-11"><a aria-label="11"></a>│&nbsp;&nbsp; │&nbsp;&nbsp; ├── [ 32K May  1 09:44]  ns-rse/dummy/renv/activate.R</span>
+<span id="cb8-12"><a aria-label="12"></a>│&nbsp;&nbsp; │&nbsp;&nbsp; └── [ 412 May  1 09:44]  ns-rse/dummy/renv/settings.json</span>
+<span id="cb8-13"><a aria-label="13"></a>│&nbsp;&nbsp; ├── [ 15K May  1 09:44]  ns-rse/dummy/renv.lock</span>
+<span id="cb8-14"><a aria-label="14"></a>│&nbsp;&nbsp; └── [  24 May  1 09:44]  ns-rse/dummy/requirements.txt</span>
+<span id="cb8-15"><a aria-label="15"></a>└── [4.0K May  1 09:40]  ns-rse/new-branch</span>
+<span id="cb8-16"><a aria-label="16"></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/img</span>
+<span id="cb8-17"><a aria-label="17"></a>    │&nbsp;&nbsp; └── [ 34K May  1 09:40]  ns-rse/new-branch/img/OSC_Sheffield.png</span>
+<span id="cb8-18"><a aria-label="18"></a>    ├── [7.9K May  1 09:40]  ns-rse/new-branch/index.qmd</span>
+<span id="cb8-19"><a aria-label="19"></a>    ├── [6.9K May  1 09:40]  ns-rse/new-branch/LICENSE</span>
+<span id="cb8-20"><a aria-label="20"></a>    ├── [ 158 May  1 09:40]  ns-rse/new-branch/_quarto.yml</span>
+<span id="cb8-21"><a aria-label="21"></a>    ├── [7.7K May  1 09:40]  ns-rse/new-branch/README.md</span>
+<span id="cb8-22"><a aria-label="22"></a>    ├── [4.0K May  1 09:40]  ns-rse/new-branch/renv</span>
+<span id="cb8-23"><a aria-label="23"></a>    │&nbsp;&nbsp; ├── [ 32K May  1 09:40]  ns-rse/new-branch/renv/activate.R</span>
+<span id="cb8-24"><a aria-label="24"></a>    │&nbsp;&nbsp; └── [ 412 May  1 09:40]  ns-rse/new-branch/renv/settings.json</span>
+<span id="cb8-25"><a aria-label="25"></a>    ├── [ 15K May  1 09:40]  ns-rse/new-branch/renv.lock</span>
+<span id="cb8-26"><a aria-label="26"></a>    └── [  24 May  1 09:40]  ns-rse/new-branch/requirements.txt</span>
+<span id="cb8-27"><a aria-label="27"></a></span>
+<span id="cb8-28"><a aria-label="28"></a>7 directories, 18 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="switching-branches-worktrees" class="slide level2 scrollable">
 <h2>Switching <sub>branches</sub> worktrees</h2>
@@ -366,17 +385,17 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>No Worktrees</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>❱ git stash save --keep-index</span>
-<span id="cb8-2"><a aria-label="2"></a>❱ git switch ns-rse/dummy</span>
-<span id="cb8-3"><a aria-label="3"></a>❱ git status</span>
-<span id="cb8-4"><a aria-label="4"></a>On branch ns-rse/dummy</span>
-<span id="cb8-5"><a aria-label="5"></a>nothing to commit, working tree clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>❱ git stash save --keep-index</span>
+<span id="cb9-2"><a aria-label="2"></a>❱ git switch ns-rse/dummy</span>
+<span id="cb9-3"><a aria-label="3"></a>❱ git status</span>
+<span id="cb9-4"><a aria-label="4"></a>On branch ns-rse/dummy</span>
+<span id="cb9-5"><a aria-label="5"></a>nothing to commit, working tree clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Worktrees</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>❱ cd ns-rse/dummy</span>
-<span id="cb9-2"><a aria-label="2"></a>❱ git status</span>
-<span id="cb9-3"><a aria-label="3"></a>On branch ns-rse/dummy</span>
-<span id="cb9-4"><a aria-label="4"></a>nothing to commit, working tree clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a aria-label="1"></a>❱ cd ns-rse/dummy</span>
+<span id="cb10-2"><a aria-label="2"></a>❱ git status</span>
+<span id="cb10-3"><a aria-label="3"></a>On branch ns-rse/dummy</span>
+<span id="cb10-4"><a aria-label="4"></a>nothing to commit, working tree clean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <ul>
 <li>✅ Different branches can have their own virtual environment with different dependencies.</li>
@@ -413,216 +432,217 @@ Neil Shephard <a href="https://orcid.org/0000-0001-8301-6857" class="quarto-titl
 <ul>
 <li>Not more onerous than removing old branches.</li>
 </ul></li>
-<li>Use a <code>post-checkout</code> hook to setup virtual environment, pre-commit and just! 🪄
+<li>Use a <code>post-checkout</code> hook 🪄
 <ul>
-<li>Uses…
-<ul>
-<li><a href="https://direnv.net/" target="_blank"><code>direnv</code></a></li>
-<li><a href="https://just.systems/man/en/" target="_blank"><code>just</code></a></li>
-<li><a href="https://pre-commit.com" target="_blank"><code>pre-commit</code></a></li>
-<li><a href="https://docs.astral.sh/uv" target="_blank"><code>uv</code></a></li>
+<li>setup a virtual environment with <a href="https://docs.astral.sh/uv" target="_blank"><code>uv</code></a></li>
+<li>add a <code>.justfile</code> for the <a href="https://just.systems/man/en/" target="_blank"><code>just</code></a> runner</li>
+<li>add a <code>.envrc</code> and allow <a href="https://direnv.net/" target="_blank"><code>direnv</code></a> in the worktree directory</li>
+<li>install <a href="https://pre-commit.com" target="_blank"><code>pre-commit</code></a> hooks</li>
 </ul></li>
 <li>Assumes using nested <code>&lt;github-user&gt;/&lt;branch-name&gt;</code> structure for worktree directories (modify <code>BASE_PATH</code> if needed).</li>
-</ul></li>
 </ul>
 </section>
 <section id="post-checkout-hook" class="slide level2">
 <h2>Post-checkout hook</h2>
 <p><a href="https://mskelton.dev/bytes/20230906143340" target="_blank">Inspiration</a></p>
 <p>Find in my <a href="https://codeberg.org/slackline/dotfiles/src/branch/master/.config/git/hooks/post-checkout" target="_blank">dotfiles</a>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a aria-label="1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="ot">==</span> <span class="st">"0000000000000000000000000000000000000000"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb10-2"><a aria-label="2"></a>  <span class="co"># Base directory for bare repository</span></span>
-<span id="cb10-3"><a aria-label="3"></a>  <span class="va">BASE_PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--git-dir</span><span class="va">)</span><span class="st">/../../"</span></span>
-<span id="cb10-4"><a aria-label="4"></a>  <span class="va">MAIN_PATH</span><span class="op">=</span><span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main"</span></span>
-<span id="cb10-5"><a aria-label="5"></a>  <span class="co"># If main/.justfile doesn't exist create it</span></span>
-<span id="cb10-6"><a aria-label="6"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${MAIN_PATH}</span><span class="st">/.justfile"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb10-7"><a aria-label="7"></a>    <span class="bu">echo</span> <span class="st">"No .justfile creating a basic skeleton"</span></span>
-<span id="cb10-8"><a aria-label="8"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-9"><a aria-label="9"></a><span class="st">@default:</span></span>
-<span id="cb10-10"><a aria-label="10"></a><span class="st">    @just --list</span></span>
-<span id="cb10-11"><a aria-label="11"></a><span class="st">"</span> <span class="op">&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-12"><a aria-label="12"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-13"><a aria-label="13"></a><span class="st"># Profile a test file</span></span>
-<span id="cb10-14"><a aria-label="14"></a><span class="st">test_profile:</span></span>
-<span id="cb10-15"><a aria-label="15"></a><span class="st">    mkdir prof</span></span>
-<span id="cb10-16"><a aria-label="16"></a><span class="st">    python -m cProfile -o prof/</span><span class="va">$(</span><span class="fu">git</span> rev-parse HEAD<span class="va">)</span><span class="st">_</span><span class="va">$(</span><span class="fu">date</span> +%Y%m%d<span class="va">)</span><span class="st">.prof </span><span class="va">$(</span><span class="fu">which</span> pytest<span class="va">)</span><span class="st"> tests/test_&lt;file&gt;.py</span></span>
-<span id="cb10-17"><a aria-label="17"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-18"><a aria-label="18"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-19"><a aria-label="19"></a><span class="st"># Serve mkdocs</span></span>
-<span id="cb10-20"><a aria-label="20"></a><span class="st">mkdocs:</span></span>
-<span id="cb10-21"><a aria-label="21"></a><span class="st">    mkdocs serve --watch docs"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-22"><a aria-label="22"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-23"><a aria-label="23"></a><span class="st"># Pre-commit ruff-check all files</span></span>
-<span id="cb10-24"><a aria-label="24"></a><span class="st">pc_ruff:</span></span>
-<span id="cb10-25"><a aria-label="25"></a><span class="st">    pre-commit run ruff-check --all-files ; pre-commit run ruff-format --all-files</span></span>
-<span id="cb10-26"><a aria-label="26"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-27"><a aria-label="27"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-28"><a aria-label="28"></a><span class="st"># Pre-commit ruff-check all files</span></span>
-<span id="cb10-29"><a aria-label="29"></a><span class="st">pc_npd:</span></span>
-<span id="cb10-30"><a aria-label="30"></a><span class="st">    pre-commit run numpydoc-validation --all-files</span></span>
-<span id="cb10-31"><a aria-label="31"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-32"><a aria-label="32"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-33"><a aria-label="33"></a><span class="st"># Pre-commit blacken all files</span></span>
-<span id="cb10-34"><a aria-label="34"></a><span class="st">pc_black:</span></span>
-<span id="cb10-35"><a aria-label="35"></a><span class="st">    pre-commit run blacken-docs --all-files</span></span>
-<span id="cb10-36"><a aria-label="36"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-37"><a aria-label="37"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-38"><a aria-label="38"></a><span class="st"># Pre-commit prettier all files</span></span>
-<span id="cb10-39"><a aria-label="39"></a><span class="st">pc_prettier:</span></span>
-<span id="cb10-40"><a aria-label="40"></a><span class="st">    pre-commit run prettier --all-files</span></span>
-<span id="cb10-41"><a aria-label="41"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-42"><a aria-label="42"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-43"><a aria-label="43"></a><span class="st"># Pre-commit markdownlint-cli2 all files</span></span>
-<span id="cb10-44"><a aria-label="44"></a><span class="st">pc_markdown:</span></span>
-<span id="cb10-45"><a aria-label="45"></a><span class="st">    pre-commit run markdownlint-cli2 --all-files</span></span>
-<span id="cb10-46"><a aria-label="46"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-47"><a aria-label="47"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-48"><a aria-label="48"></a><span class="st"># Pre-commit pylint all files</span></span>
-<span id="cb10-49"><a aria-label="49"></a><span class="st">pc_pylint:</span></span>
-<span id="cb10-50"><a aria-label="50"></a><span class="st">    pre-commit run pylint --all-files</span></span>
-<span id="cb10-51"><a aria-label="51"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-52"><a aria-label="52"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-53"><a aria-label="53"></a><span class="st"># Pytest everything</span></span>
-<span id="cb10-54"><a aria-label="54"></a><span class="st">pytest:</span></span>
-<span id="cb10-55"><a aria-label="55"></a><span class="st">    pytest --cov=src --cov-branch --numprocesses=logical</span></span>
-<span id="cb10-56"><a aria-label="56"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-57"><a aria-label="57"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-58"><a aria-label="58"></a><span class="st"># Pytest with Matplotlib html report</span></span>
-<span id="cb10-59"><a aria-label="59"></a><span class="st">pytest_mpl_html_report:</span></span>
-<span id="cb10-60"><a aria-label="60"></a><span class="st">    mkdir -p tmp/mpl</span></span>
-<span id="cb10-61"><a aria-label="61"></a><span class="st">    pytest tests/test_plotting.py --mpl-generate-summary html --mpl-results-path tmp/mpl</span></span>
-<span id="cb10-62"><a aria-label="62"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-63"><a aria-label="63"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-64"><a aria-label="64"></a><span class="st"># Pytest update Matplotlib snapshots</span></span>
-<span id="cb10-65"><a aria-label="65"></a><span class="st">pytest_mpl_update:</span></span>
-<span id="cb10-66"><a aria-label="66"></a><span class="st">    mkdir -p tests/__mpl_snapshots__/</span></span>
-<span id="cb10-67"><a aria-label="67"></a><span class="st">    pytest tests/test_plotting.py --mpl-generate-path=tests/__mpl_snapshots__</span></span>
-<span id="cb10-68"><a aria-label="68"></a><span class="st">    pytest tests/test_classes.py --mpl-generate-path=tests/__mpl_snapshots__</span></span>
-<span id="cb10-69"><a aria-label="69"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-70"><a aria-label="70"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-71"><a aria-label="71"></a><span class="st"># Pytest update Syrupy snapshots</span></span>
-<span id="cb10-72"><a aria-label="72"></a><span class="st">pytest_snapshot_update:</span></span>
-<span id="cb10-73"><a aria-label="73"></a><span class="st">    pytest --snapshot-update</span></span>
-<span id="cb10-74"><a aria-label="74"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-75"><a aria-label="75"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-76"><a aria-label="76"></a><span class="st"># Pytest update Maplotlib and Syrupy snapshots</span></span>
-<span id="cb10-77"><a aria-label="77"></a><span class="st">pytest_update:</span></span>
-<span id="cb10-78"><a aria-label="78"></a><span class="st">    just pytest_mpl_update</span></span>
-<span id="cb10-79"><a aria-label="79"></a><span class="st">    just pytest_snapshot_update</span></span>
-<span id="cb10-80"><a aria-label="80"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-81"><a aria-label="81"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-82"><a aria-label="82"></a><span class="st"># uv sync and lock</span></span>
-<span id="cb10-83"><a aria-label="83"></a><span class="st">uv_upgrade:</span></span>
-<span id="cb10-84"><a aria-label="84"></a><span class="st">    uv sync</span></span>
-<span id="cb10-85"><a aria-label="85"></a><span class="st">    uv lock --upgrade</span></span>
-<span id="cb10-86"><a aria-label="86"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-87"><a aria-label="87"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
-<span id="cb10-88"><a aria-label="88"></a><span class="st"># uv pip install all</span></span>
-<span id="cb10-89"><a aria-label="89"></a><span class="st">pip_install:</span></span>
-<span id="cb10-90"><a aria-label="90"></a><span class="st">    uv pip install --editable . --group dev</span></span>
-<span id="cb10-91"><a aria-label="91"></a></span>
-<span id="cb10-92"><a aria-label="92"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-93"><a aria-label="93"></a>    <span class="bu">printf</span> <span class="st">""</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
-<span id="cb10-94"><a aria-label="94"></a>  <span class="cf">fi</span></span>
-<span id="cb10-95"><a aria-label="95"></a>  <span class="co"># If main/envrc doesn't exist create it</span></span>
-<span id="cb10-96"><a aria-label="96"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${MAIN_PATH}</span><span class="st">/.envrc"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb10-97"><a aria-label="97"></a>    <span class="bu">echo</span> <span class="st">"No .envrc creating a basic skeleton"</span></span>
-<span id="cb10-98"><a aria-label="98"></a>    <span class="bu">printf</span> <span class="st">"#!/bin/bash</span></span>
-<span id="cb10-99"><a aria-label="99"></a><span class="st">source .venv/bin/activate</span></span>
-<span id="cb10-100"><a aria-label="100"></a><span class="st">export PATH=</span><span class="va">${VIRTUAL_ENV}</span><span class="st">/bin:</span><span class="va">${PATH}</span><span class="st">"</span> <span class="op">&gt;</span> <span class="va">${MAIN_PATH}</span>/.envrc</span>
-<span id="cb10-101"><a aria-label="101"></a>  <span class="cf">fi</span></span>
-<span id="cb10-102"><a aria-label="102"></a>  <span class="co"># Copy main/.{envrc,justfiles} to current directory</span></span>
-<span id="cb10-103"><a aria-label="103"></a>  <span class="va">FILES</span><span class="op">=</span><span class="va">(</span><span class="st">".justfile"</span> <span class="st">".envrc"</span><span class="va">)</span></span>
-<span id="cb10-104"><a aria-label="104"></a>  <span class="cf">for</span> FILE <span class="kw">in</span> <span class="st">"</span><span class="va">${FILES</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb10-105"><a aria-label="105"></a>    <span class="bu">echo</span> <span class="st">"Copying main/'</span><span class="va">${FILE}</span><span class="st">' to </span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
-<span id="cb10-106"><a aria-label="106"></a>    <span class="fu">cp</span> <span class="st">"</span><span class="va">${MAIN_PATH}</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span> <span class="st">"</span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
-<span id="cb10-107"><a aria-label="107"></a>  <span class="cf">done</span></span>
-<span id="cb10-108"><a aria-label="108"></a>  <span class="co"># Create a virtual environment using uv and install the current Python package</span></span>
-<span id="cb10-109"><a aria-label="109"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="st">".venv/"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb10-110"><a aria-label="110"></a>    <span class="ex">uv</span> venv</span>
-<span id="cb10-111"><a aria-label="111"></a>    <span class="ex">uv</span> sync</span>
-<span id="cb10-112"><a aria-label="112"></a>    <span class="ex">just</span> pip_install</span>
-<span id="cb10-113"><a aria-label="113"></a>    <span class="co"># Allow direnv so venv can be activated</span></span>
-<span id="cb10-114"><a aria-label="114"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">".envrc"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb10-115"><a aria-label="115"></a>      <span class="ex">direnv</span> allow</span>
-<span id="cb10-116"><a aria-label="116"></a>    <span class="cf">fi</span></span>
-<span id="cb10-117"><a aria-label="117"></a>  <span class="cf">fi</span></span>
-<span id="cb10-118"><a aria-label="118"></a>  <span class="co"># Enable pre-commit if not already enabled</span></span>
-<span id="cb10-119"><a aria-label="119"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/hooks/pre-commit"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb10-120"><a aria-label="120"></a>    <span class="ex">pre-commit</span> install</span>
-<span id="cb10-121"><a aria-label="121"></a>  <span class="cf">fi</span></span>
-<span id="cb10-122"><a aria-label="122"></a><span class="cf">fi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a aria-label="1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="co">#</span></span>
+<span id="cb11-3"><a aria-label="3"></a><span class="co"># Inspiration from : https://mskelton.dev/bytes/20230906143340</span></span>
+<span id="cb11-4"><a aria-label="4"></a><span class="co">#</span></span>
+<span id="cb11-5"><a aria-label="5"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$1</span><span class="st">"</span> <span class="ot">==</span> <span class="st">"0000000000000000000000000000000000000000"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb11-6"><a aria-label="6"></a>  <span class="co"># Base directory for bare repository</span></span>
+<span id="cb11-7"><a aria-label="7"></a>  <span class="va">BASE_PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--git-dir</span><span class="va">)</span><span class="st">/../../"</span></span>
+<span id="cb11-8"><a aria-label="8"></a>  <span class="va">MAIN_PATH</span><span class="op">=</span><span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/main"</span></span>
+<span id="cb11-9"><a aria-label="9"></a>  <span class="co"># If main/.justfile doesn't exist create it</span></span>
+<span id="cb11-10"><a aria-label="10"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${MAIN_PATH}</span><span class="st">/.justfile"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb11-11"><a aria-label="11"></a>    <span class="bu">echo</span> <span class="st">"No .justfile creating a basic skeleton"</span></span>
+<span id="cb11-12"><a aria-label="12"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-13"><a aria-label="13"></a><span class="st">@default:</span></span>
+<span id="cb11-14"><a aria-label="14"></a><span class="st">    @just --list</span></span>
+<span id="cb11-15"><a aria-label="15"></a><span class="st">"</span> <span class="op">&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-16"><a aria-label="16"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-17"><a aria-label="17"></a><span class="st"># Profile a test file</span></span>
+<span id="cb11-18"><a aria-label="18"></a><span class="st">test_profile:</span></span>
+<span id="cb11-19"><a aria-label="19"></a><span class="st">    mkdir prof</span></span>
+<span id="cb11-20"><a aria-label="20"></a><span class="st">    python -m cProfile -o prof/</span><span class="va">$(</span><span class="fu">git</span> rev-parse HEAD<span class="va">)</span><span class="st">_</span><span class="va">$(</span><span class="fu">date</span> +%Y%m%d<span class="va">)</span><span class="st">.prof </span><span class="va">$(</span><span class="fu">which</span> pytest<span class="va">)</span><span class="st"> tests/test_&lt;file&gt;.py</span></span>
+<span id="cb11-21"><a aria-label="21"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-22"><a aria-label="22"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-23"><a aria-label="23"></a><span class="st"># Serve mkdocs</span></span>
+<span id="cb11-24"><a aria-label="24"></a><span class="st">mkdocs:</span></span>
+<span id="cb11-25"><a aria-label="25"></a><span class="st">    mkdocs serve --watch docs"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-26"><a aria-label="26"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-27"><a aria-label="27"></a><span class="st"># Pre-commit ruff-check all files</span></span>
+<span id="cb11-28"><a aria-label="28"></a><span class="st">pc_ruff:</span></span>
+<span id="cb11-29"><a aria-label="29"></a><span class="st">    pre-commit run ruff-check --all-files ; pre-commit run ruff-format --all-files</span></span>
+<span id="cb11-30"><a aria-label="30"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-31"><a aria-label="31"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-32"><a aria-label="32"></a><span class="st"># Pre-commit ruff-check all files</span></span>
+<span id="cb11-33"><a aria-label="33"></a><span class="st">pc_npd:</span></span>
+<span id="cb11-34"><a aria-label="34"></a><span class="st">    pre-commit run numpydoc-validation --all-files</span></span>
+<span id="cb11-35"><a aria-label="35"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-36"><a aria-label="36"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-37"><a aria-label="37"></a><span class="st"># Pre-commit blacken all files</span></span>
+<span id="cb11-38"><a aria-label="38"></a><span class="st">pc_black:</span></span>
+<span id="cb11-39"><a aria-label="39"></a><span class="st">    pre-commit run blacken-docs --all-files</span></span>
+<span id="cb11-40"><a aria-label="40"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-41"><a aria-label="41"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-42"><a aria-label="42"></a><span class="st"># Pre-commit prettier all files</span></span>
+<span id="cb11-43"><a aria-label="43"></a><span class="st">pc_prettier:</span></span>
+<span id="cb11-44"><a aria-label="44"></a><span class="st">    pre-commit run prettier --all-files</span></span>
+<span id="cb11-45"><a aria-label="45"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-46"><a aria-label="46"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-47"><a aria-label="47"></a><span class="st"># Pre-commit markdownlint-cli2 all files</span></span>
+<span id="cb11-48"><a aria-label="48"></a><span class="st">pc_markdown:</span></span>
+<span id="cb11-49"><a aria-label="49"></a><span class="st">    pre-commit run markdownlint-cli2 --all-files</span></span>
+<span id="cb11-50"><a aria-label="50"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-51"><a aria-label="51"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-52"><a aria-label="52"></a><span class="st"># Pre-commit pylint all files</span></span>
+<span id="cb11-53"><a aria-label="53"></a><span class="st">pc_pylint:</span></span>
+<span id="cb11-54"><a aria-label="54"></a><span class="st">    pre-commit run pylint --all-files</span></span>
+<span id="cb11-55"><a aria-label="55"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-56"><a aria-label="56"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-57"><a aria-label="57"></a><span class="st"># Pytest everything</span></span>
+<span id="cb11-58"><a aria-label="58"></a><span class="st">pytest:</span></span>
+<span id="cb11-59"><a aria-label="59"></a><span class="st">    pytest --cov=src --cov-branch --numprocesses=logical</span></span>
+<span id="cb11-60"><a aria-label="60"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-61"><a aria-label="61"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-62"><a aria-label="62"></a><span class="st"># Pytest with Matplotlib html report</span></span>
+<span id="cb11-63"><a aria-label="63"></a><span class="st">pytest_mpl_html_report:</span></span>
+<span id="cb11-64"><a aria-label="64"></a><span class="st">    mkdir -p tmp/mpl</span></span>
+<span id="cb11-65"><a aria-label="65"></a><span class="st">    pytest tests/test_plotting.py --mpl-generate-summary html --mpl-results-path tmp/mpl</span></span>
+<span id="cb11-66"><a aria-label="66"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-67"><a aria-label="67"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-68"><a aria-label="68"></a><span class="st"># Pytest update Matplotlib snapshots</span></span>
+<span id="cb11-69"><a aria-label="69"></a><span class="st">pytest_mpl_update:</span></span>
+<span id="cb11-70"><a aria-label="70"></a><span class="st">    mkdir -p tests/__mpl_snapshots__/</span></span>
+<span id="cb11-71"><a aria-label="71"></a><span class="st">    pytest tests/test_plotting.py --mpl-generate-path=tests/__mpl_snapshots__</span></span>
+<span id="cb11-72"><a aria-label="72"></a><span class="st">    pytest tests/test_classes.py --mpl-generate-path=tests/__mpl_snapshots__</span></span>
+<span id="cb11-73"><a aria-label="73"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-74"><a aria-label="74"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-75"><a aria-label="75"></a><span class="st"># Pytest update Syrupy snapshots</span></span>
+<span id="cb11-76"><a aria-label="76"></a><span class="st">pytest_snapshot_update:</span></span>
+<span id="cb11-77"><a aria-label="77"></a><span class="st">    pytest --snapshot-update</span></span>
+<span id="cb11-78"><a aria-label="78"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-79"><a aria-label="79"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-80"><a aria-label="80"></a><span class="st"># Pytest update Maplotlib and Syrupy snapshots</span></span>
+<span id="cb11-81"><a aria-label="81"></a><span class="st">pytest_update:</span></span>
+<span id="cb11-82"><a aria-label="82"></a><span class="st">    just pytest_mpl_update</span></span>
+<span id="cb11-83"><a aria-label="83"></a><span class="st">    just pytest_snapshot_update</span></span>
+<span id="cb11-84"><a aria-label="84"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-85"><a aria-label="85"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-86"><a aria-label="86"></a><span class="st"># uv sync and lock</span></span>
+<span id="cb11-87"><a aria-label="87"></a><span class="st">uv_upgrade:</span></span>
+<span id="cb11-88"><a aria-label="88"></a><span class="st">    uv sync</span></span>
+<span id="cb11-89"><a aria-label="89"></a><span class="st">    uv lock --upgrade</span></span>
+<span id="cb11-90"><a aria-label="90"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-91"><a aria-label="91"></a>    <span class="bu">printf</span> <span class="st">"</span></span>
+<span id="cb11-92"><a aria-label="92"></a><span class="st"># uv pip install all</span></span>
+<span id="cb11-93"><a aria-label="93"></a><span class="st">pip_install:</span></span>
+<span id="cb11-94"><a aria-label="94"></a><span class="st">    uv pip install --editable . --group dev</span></span>
+<span id="cb11-95"><a aria-label="95"></a></span>
+<span id="cb11-96"><a aria-label="96"></a><span class="st">"</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-97"><a aria-label="97"></a>    <span class="bu">printf</span> <span class="st">""</span> <span class="op">&gt;&gt;</span> <span class="va">${MAIN_PATH}</span>/.justfile</span>
+<span id="cb11-98"><a aria-label="98"></a>  <span class="cf">fi</span></span>
+<span id="cb11-99"><a aria-label="99"></a>  <span class="co"># If main/envrc doesn't exist create it</span></span>
+<span id="cb11-100"><a aria-label="100"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${MAIN_PATH}</span><span class="st">/.envrc"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb11-101"><a aria-label="101"></a>    <span class="bu">echo</span> <span class="st">"No .envrc creating a basic skeleton"</span></span>
+<span id="cb11-102"><a aria-label="102"></a>    <span class="bu">printf</span> <span class="st">"#!/bin/bash</span></span>
+<span id="cb11-103"><a aria-label="103"></a><span class="st">source .venv/bin/activate</span></span>
+<span id="cb11-104"><a aria-label="104"></a><span class="st">export PATH=</span><span class="va">${VIRTUAL_ENV}</span><span class="st">/bin:</span><span class="va">${PATH}</span><span class="st">"</span> <span class="op">&gt;</span> <span class="va">${MAIN_PATH}</span>/.envrc</span>
+<span id="cb11-105"><a aria-label="105"></a>  <span class="cf">fi</span></span>
+<span id="cb11-106"><a aria-label="106"></a>  <span class="co"># Copy main/.{envrc,justfiles} to current directory</span></span>
+<span id="cb11-107"><a aria-label="107"></a>  <span class="va">FILES</span><span class="op">=</span><span class="va">(</span><span class="st">".justfile"</span> <span class="st">".envrc"</span><span class="va">)</span></span>
+<span id="cb11-108"><a aria-label="108"></a>  <span class="cf">for</span> FILE <span class="kw">in</span> <span class="st">"</span><span class="va">${FILES</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb11-109"><a aria-label="109"></a>    <span class="bu">echo</span> <span class="st">"Copying main/'</span><span class="va">${FILE}</span><span class="st">' to </span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
+<span id="cb11-110"><a aria-label="110"></a>    <span class="fu">cp</span> <span class="st">"</span><span class="va">${MAIN_PATH}</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span> <span class="st">"</span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span><span class="st">/</span><span class="va">${FILE}</span><span class="st">"</span></span>
+<span id="cb11-111"><a aria-label="111"></a>  <span class="cf">done</span></span>
+<span id="cb11-112"><a aria-label="112"></a>  <span class="co"># Create a virtual environment using uv and install the current Python package</span></span>
+<span id="cb11-113"><a aria-label="113"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="st">".venv/"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb11-114"><a aria-label="114"></a>    <span class="ex">uv</span> venv</span>
+<span id="cb11-115"><a aria-label="115"></a>    <span class="ex">uv</span> sync</span>
+<span id="cb11-116"><a aria-label="116"></a>    <span class="ex">just</span> pip_install</span>
+<span id="cb11-117"><a aria-label="117"></a>    <span class="co"># Allow direnv so venv can be activated</span></span>
+<span id="cb11-118"><a aria-label="118"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">".envrc"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb11-119"><a aria-label="119"></a>      <span class="ex">direnv</span> allow</span>
+<span id="cb11-120"><a aria-label="120"></a>    <span class="cf">fi</span></span>
+<span id="cb11-121"><a aria-label="121"></a>  <span class="cf">fi</span></span>
+<span id="cb11-122"><a aria-label="122"></a>  <span class="co"># Enable pre-commit if not already enabled</span></span>
+<span id="cb11-123"><a aria-label="123"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">${BASE_PATH}</span><span class="st">/hooks/pre-commit"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb11-124"><a aria-label="124"></a>    <span class="ex">pre-commit</span> install</span>
+<span id="cb11-125"><a aria-label="125"></a>  <span class="cf">fi</span></span>
+<span id="cb11-126"><a aria-label="126"></a><span class="cf">fi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="resulting-.justfile" class="slide level2">
 <h2>Resulting <code>.justfile</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a aria-label="1"></a>@default:</span>
-<span id="cb11-2"><a aria-label="2"></a>    @just --list</span>
-<span id="cb11-3"><a aria-label="3"></a></span>
-<span id="cb11-4"><a aria-label="4"></a># Profile a test file.</span>
-<span id="cb11-5"><a aria-label="5"></a>test_profile:</span>
-<span id="cb11-6"><a aria-label="6"></a>    mkdir prof</span>
-<span id="cb11-7"><a aria-label="7"></a>    python -m cProfile -o prof/$(git rev-parse HEAD)_$(date +%Y%m%d).prof $(which pytest) tests/test_&lt;file&gt;.py</span>
-<span id="cb11-8"><a aria-label="8"></a></span>
-<span id="cb11-9"><a aria-label="9"></a># uv pip install package with dev group dependencies</span>
-<span id="cb11-10"><a aria-label="10"></a>pip_install:</span>
-<span id="cb11-11"><a aria-label="11"></a>    uv pip install --editable . --group dev</span>
-<span id="cb11-12"><a aria-label="12"></a></span>
-<span id="cb11-13"><a aria-label="13"></a># Serve mkdocs</span>
-<span id="cb11-14"><a aria-label="14"></a>mkdocs:</span>
-<span id="cb11-15"><a aria-label="15"></a>    mkdocs serve --watch docs</span>
-<span id="cb11-16"><a aria-label="16"></a></span>
-<span id="cb11-17"><a aria-label="17"></a># Pre-commit ruff-check all files</span>
-<span id="cb11-18"><a aria-label="18"></a>pc_ruff:</span>
-<span id="cb11-19"><a aria-label="19"></a>    pre-commit run ruff-check --all-files</span>
-<span id="cb11-20"><a aria-label="20"></a></span>
-<span id="cb11-21"><a aria-label="21"></a># Pre-commit numpydoc all files</span>
-<span id="cb11-22"><a aria-label="22"></a>pc_npd:</span>
-<span id="cb11-23"><a aria-label="23"></a>    pre-commit run numpydoc-validation --all-files</span>
-<span id="cb11-24"><a aria-label="24"></a></span>
-<span id="cb11-25"><a aria-label="25"></a># Pre-commit blacken all files</span>
-<span id="cb11-26"><a aria-label="26"></a>pc_black:</span>
-<span id="cb11-27"><a aria-label="27"></a>    pre-commit run blacken-docs --all-files</span>
-<span id="cb11-28"><a aria-label="28"></a></span>
-<span id="cb11-29"><a aria-label="29"></a># Pre-commit prettier all files</span>
-<span id="cb11-30"><a aria-label="30"></a>pc_prettier:</span>
-<span id="cb11-31"><a aria-label="31"></a>    pre-commit run prettier --all-files</span>
-<span id="cb11-32"><a aria-label="32"></a></span>
-<span id="cb11-33"><a aria-label="33"></a># Pre-commit markdownlint-cli2 all files</span>
-<span id="cb11-34"><a aria-label="34"></a>pc_markdown:</span>
-<span id="cb11-35"><a aria-label="35"></a>    pre-commit run markdownlint-cli2 --all-files</span>
-<span id="cb11-36"><a aria-label="36"></a></span>
-<span id="cb11-37"><a aria-label="37"></a># Pre-commit pylint all files</span>
-<span id="cb11-38"><a aria-label="38"></a>pc_pylint:</span>
-<span id="cb11-39"><a aria-label="39"></a>    pre-commit run pylint --all-files</span>
-<span id="cb11-40"><a aria-label="40"></a></span>
-<span id="cb11-41"><a aria-label="41"></a># Pytest everything</span>
-<span id="cb11-42"><a aria-label="42"></a>pytest:</span>
-<span id="cb11-43"><a aria-label="43"></a>    pytest --cov=src --cov-branch --numprocesses=logical</span>
-<span id="cb11-44"><a aria-label="44"></a></span>
-<span id="cb11-45"><a aria-label="45"></a># Pytest with Matplotlib html report</span>
-<span id="cb11-46"><a aria-label="46"></a>pytest_mpl_html_report:</span>
-<span id="cb11-47"><a aria-label="47"></a>    mkdir -p tmp/mpl</span>
-<span id="cb11-48"><a aria-label="48"></a>    pytest tests/test_plotting.py --mpl-generate-summary html --mpl-results-path tmp/mpl</span>
-<span id="cb11-49"><a aria-label="49"></a></span>
-<span id="cb11-50"><a aria-label="50"></a># Pytest update Matplotlib snapshots</span>
-<span id="cb11-51"><a aria-label="51"></a>pytest_mpl_update:</span>
-<span id="cb11-52"><a aria-label="52"></a>    mkdir -p tests/__mpl_snapshots__/</span>
-<span id="cb11-53"><a aria-label="53"></a>    pytest tests/test_plotting.py --mpl-generate-path=tests/__mpl_snapshots__</span>
-<span id="cb11-54"><a aria-label="54"></a>    pytest tests/test_classes.py --mpl-generate-path=tests/__mpl_snapshots__</span>
-<span id="cb11-55"><a aria-label="55"></a></span>
-<span id="cb11-56"><a aria-label="56"></a># Pytest update Syrupy snapshots</span>
-<span id="cb11-57"><a aria-label="57"></a>pytest_snapshot_update:</span>
-<span id="cb11-58"><a aria-label="58"></a>    pytest --snapshot-update</span>
-<span id="cb11-59"><a aria-label="59"></a></span>
-<span id="cb11-60"><a aria-label="60"></a># Pytest update Maplotlib and Syrupy snapshots</span>
-<span id="cb11-61"><a aria-label="61"></a>pytest_update:</span>
-<span id="cb11-62"><a aria-label="62"></a>    just pytest_mpl_update</span>
-<span id="cb11-63"><a aria-label="63"></a>    just pytest_snapshot_update</span>
-<span id="cb11-64"><a aria-label="64"></a></span>
-<span id="cb11-65"><a aria-label="65"></a># uv sync and lock</span>
-<span id="cb11-66"><a aria-label="66"></a>uv_upgrade:</span>
-<span id="cb11-67"><a aria-label="67"></a>    uv sync</span>
-<span id="cb11-68"><a aria-label="68"></a>    uv lock --upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a aria-label="1"></a>@default:</span>
+<span id="cb12-2"><a aria-label="2"></a>    @just --list</span>
+<span id="cb12-3"><a aria-label="3"></a></span>
+<span id="cb12-4"><a aria-label="4"></a># Profile a test file.</span>
+<span id="cb12-5"><a aria-label="5"></a>test_profile:</span>
+<span id="cb12-6"><a aria-label="6"></a>    mkdir prof</span>
+<span id="cb12-7"><a aria-label="7"></a>    python -m cProfile -o prof/$(git rev-parse HEAD)_$(date +%Y%m%d).prof $(which pytest) tests/test_&lt;file&gt;.py</span>
+<span id="cb12-8"><a aria-label="8"></a></span>
+<span id="cb12-9"><a aria-label="9"></a># uv pip install package with dev group dependencies</span>
+<span id="cb12-10"><a aria-label="10"></a>pip_install:</span>
+<span id="cb12-11"><a aria-label="11"></a>    uv pip install --editable . --group dev</span>
+<span id="cb12-12"><a aria-label="12"></a></span>
+<span id="cb12-13"><a aria-label="13"></a># Serve mkdocs</span>
+<span id="cb12-14"><a aria-label="14"></a>mkdocs:</span>
+<span id="cb12-15"><a aria-label="15"></a>    mkdocs serve --watch docs</span>
+<span id="cb12-16"><a aria-label="16"></a></span>
+<span id="cb12-17"><a aria-label="17"></a># Pre-commit ruff-check all files</span>
+<span id="cb12-18"><a aria-label="18"></a>pc_ruff:</span>
+<span id="cb12-19"><a aria-label="19"></a>    pre-commit run ruff-check --all-files</span>
+<span id="cb12-20"><a aria-label="20"></a></span>
+<span id="cb12-21"><a aria-label="21"></a># Pre-commit numpydoc all files</span>
+<span id="cb12-22"><a aria-label="22"></a>pc_npd:</span>
+<span id="cb12-23"><a aria-label="23"></a>    pre-commit run numpydoc-validation --all-files</span>
+<span id="cb12-24"><a aria-label="24"></a></span>
+<span id="cb12-25"><a aria-label="25"></a># Pre-commit blacken all files</span>
+<span id="cb12-26"><a aria-label="26"></a>pc_black:</span>
+<span id="cb12-27"><a aria-label="27"></a>    pre-commit run blacken-docs --all-files</span>
+<span id="cb12-28"><a aria-label="28"></a></span>
+<span id="cb12-29"><a aria-label="29"></a># Pre-commit prettier all files</span>
+<span id="cb12-30"><a aria-label="30"></a>pc_prettier:</span>
+<span id="cb12-31"><a aria-label="31"></a>    pre-commit run prettier --all-files</span>
+<span id="cb12-32"><a aria-label="32"></a></span>
+<span id="cb12-33"><a aria-label="33"></a># Pre-commit markdownlint-cli2 all files</span>
+<span id="cb12-34"><a aria-label="34"></a>pc_markdown:</span>
+<span id="cb12-35"><a aria-label="35"></a>    pre-commit run markdownlint-cli2 --all-files</span>
+<span id="cb12-36"><a aria-label="36"></a></span>
+<span id="cb12-37"><a aria-label="37"></a># Pre-commit pylint all files</span>
+<span id="cb12-38"><a aria-label="38"></a>pc_pylint:</span>
+<span id="cb12-39"><a aria-label="39"></a>    pre-commit run pylint --all-files</span>
+<span id="cb12-40"><a aria-label="40"></a></span>
+<span id="cb12-41"><a aria-label="41"></a># Pytest everything</span>
+<span id="cb12-42"><a aria-label="42"></a>pytest:</span>
+<span id="cb12-43"><a aria-label="43"></a>    pytest --cov=src --cov-branch --numprocesses=logical</span>
+<span id="cb12-44"><a aria-label="44"></a></span>
+<span id="cb12-45"><a aria-label="45"></a># Pytest with Matplotlib html report</span>
+<span id="cb12-46"><a aria-label="46"></a>pytest_mpl_html_report:</span>
+<span id="cb12-47"><a aria-label="47"></a>    mkdir -p tmp/mpl</span>
+<span id="cb12-48"><a aria-label="48"></a>    pytest tests/test_plotting.py --mpl-generate-summary html --mpl-results-path tmp/mpl</span>
+<span id="cb12-49"><a aria-label="49"></a></span>
+<span id="cb12-50"><a aria-label="50"></a># Pytest update Matplotlib snapshots</span>
+<span id="cb12-51"><a aria-label="51"></a>pytest_mpl_update:</span>
+<span id="cb12-52"><a aria-label="52"></a>    mkdir -p tests/__mpl_snapshots__/</span>
+<span id="cb12-53"><a aria-label="53"></a>    pytest tests/test_plotting.py --mpl-generate-path=tests/__mpl_snapshots__</span>
+<span id="cb12-54"><a aria-label="54"></a>    pytest tests/test_classes.py --mpl-generate-path=tests/__mpl_snapshots__</span>
+<span id="cb12-55"><a aria-label="55"></a></span>
+<span id="cb12-56"><a aria-label="56"></a># Pytest update Syrupy snapshots</span>
+<span id="cb12-57"><a aria-label="57"></a>pytest_snapshot_update:</span>
+<span id="cb12-58"><a aria-label="58"></a>    pytest --snapshot-update</span>
+<span id="cb12-59"><a aria-label="59"></a></span>
+<span id="cb12-60"><a aria-label="60"></a># Pytest update Maplotlib and Syrupy snapshots</span>
+<span id="cb12-61"><a aria-label="61"></a>pytest_update:</span>
+<span id="cb12-62"><a aria-label="62"></a>    just pytest_mpl_update</span>
+<span id="cb12-63"><a aria-label="63"></a>    just pytest_snapshot_update</span>
+<span id="cb12-64"><a aria-label="64"></a></span>
+<span id="cb12-65"><a aria-label="65"></a># uv sync and lock</span>
+<span id="cb12-66"><a aria-label="66"></a>uv_upgrade:</span>
+<span id="cb12-67"><a aria-label="67"></a>    uv sync</span>
+<span id="cb12-68"><a aria-label="68"></a>    uv lock --upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="resulting-.envrc" class="slide level2">
 <h2>Resulting <code>.envrc</code></h2>
@@ -648,9 +668,9 @@ export PATH=${VIRTUAL_ENV}/bin:${PATH}
 <li>✅ <code>Z</code> pulls up the transient buffer for worktree management.</li>
 <li>✅ Still use <a href="https://docs.magit.vc/forge/" target="_blank">Forge</a> to interact with and create issues/pull requests GitHub/GitLab.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource lisp number-lines code-with-copy"><code class="sourceCode commonlisp"><span id="cb13-1"><a aria-label="1"></a>  <span class="co">;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/</span></span>
-<span id="cb13-2"><a aria-label="2"></a>  <span class="co">;; Show all worktrees at the end of the status buffer (if more than one)</span></span>
-<span id="cb13-3"><a aria-label="3"></a>  (add-hook <span class="dt">'magit-status-sections-hook</span> <span class="op">#'</span>magit-insert-worktrees <span class="kw">t</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource lisp number-lines code-with-copy"><code class="sourceCode commonlisp"><span id="cb14-1"><a aria-label="1"></a>  <span class="co">;; https://huonw.github.io/blog/2025/12/magit-insert-worktrees/</span></span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="co">;; Show all worktrees at the end of the status buffer (if more than one)</span></span>
+<span id="cb14-3"><a aria-label="3"></a>  (add-hook <span class="dt">'magit-status-sections-hook</span> <span class="op">#'</span>magit-insert-worktrees <span class="kw">t</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/emacs_magit_worktree.png"></p>
