@@ -4,14 +4,14 @@
     "href": "index.html#scan-this",
     "title": "Git Worktrees",
     "section": "Scan This",
-    "text": "Scan This\n\n\n    \nns-rse.github.io/git-worktrees"
+    "text": "Scan This\n\n\n    \nblog.nshephard.dev/git-worktrees"
   },
   {
     "objectID": "index.html#git-worktrees",
     "href": "index.html#git-worktrees",
     "title": "Git Worktrees",
     "section": "Git Worktrees",
-    "text": "Git Worktrees\n\nWhy?\nChallenges?"
+    "text": "Git Worktrees\n\nFirst encountered in 2024\nOnly started using widely five months ago\nWhy?\nChallenges?"
   },
   {
     "objectID": "index.html#why-worktrees",
@@ -117,6 +117,13 @@
     "title": "Git Worktrees",
     "section": "",
     "text": "Julia Evans (@bork)"
+  },
+  {
+    "objectID": "index.html#blog-post",
+    "href": "index.html#blog-post",
+    "title": "Git Worktrees",
+    "section": "Blog Post",
+    "text": "Blog Post\n\n\n    \nblog.nshephard.dev/posts/git-worktree-hooks/"
   },
   {
     "objectID": "index.html#links",
